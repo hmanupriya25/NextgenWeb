@@ -6924,3 +6924,12 @@ blockquote::after, .blockquote::after {
     border-top: 1px solid rgba(167,139,250,.15) !important;
   }
 }
+
+
+/* NextGen logo sizing */
+.navbar-brand img,
+.techvio-responsive-nav .logo img { height: 54px; width: auto; }
+.footer-logo img { height: 60px; width: auto; }
+@media only screen and (max-width: 575px) {
+  .navbar-brand img, .techvio-responsive-nav .logo img { height: 44px; }
+}
