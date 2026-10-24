@@ -1,0 +1,660 @@
+<!doctype html>
+<html lang="en">
+
+
+<head>
+	<!-- Required meta tags -->
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<!-- Title -->
+	<title>Tally Customization (TDL) in Sri Lanka | NextGen SoftTech</title>
+	<script>document.documentElement.classList.add('js')</script>
+	<meta name="description" content="Tally customization with TDL in Sri Lanka: custom invoices, reports, approvals, integrations and industry modules built by NextGen SoftTech developers.">
+	<!-- Google Fonts -->
+	<link href="https://fonts.googleapis.com/css2?family=Dosis:wght@400;500;600;700;800&amp;display=swap"
+		rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Catamaran:wght@300;400;500;600;700;800;900&amp;display=swap"
+		rel="stylesheet">
+	<!-- Favicon -->
+	<link rel="icon" type="image/png" href="assets/img/favicon.png">
+	<!-- Bootstrap Min CSS -->
+	<link rel="stylesheet" href="assets/css/bootstrap.min.css">
+	<!-- Animate Min CSS -->
+	<link rel="stylesheet" href="assets/css/animate.min.css">
+	<!-- FlatIcon CSS -->
+	<link rel="stylesheet" href="assets/css/flaticon.css">
+	<!-- Font Awesome Min CSS -->
+	<link rel="stylesheet" href="assets/css/fontawesome.min.css">
+	<!-- Bootstrap Icon CSS -->
+	<link rel="stylesheet" href="assets/css/bootstrap-icons.css">
+	<!-- Mean Menu CSS -->
+	<link rel="stylesheet" href="assets/css/meanmenu.css">
+	<!-- Magnific Popup Min CSS -->
+	<link rel="stylesheet" href="assets/css/magnific-popup.min.css">
+	<!-- Swiper Min CSS -->
+	<link rel="stylesheet" href="assets/css/swiper.min.css">
+	<!-- Owl Carousel Min CSS -->
+	<link rel="stylesheet" href="assets/css/owl.carousel.min.css">
+	<!-- Style CSS -->
+	<link rel="stylesheet" href="assets/css/style.css">
+	<!-- Responsive CSS -->
+	<link rel="stylesheet" href="assets/css/responsive.css">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700&family=Figtree:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#0b0f2e;--violet:#7b68ee;--ink:#171a3a;--mut:#5d6180;--mist:#f5f6fc;--line:#e4e6f4;--mint:#5ce0b8}
+.hx,.mqs,.st,.sv,.pr-s,.wy,.ct{font-family:'Figtree',sans-serif}
+.hx h1,.sh h2,.bn h3,.pr h3,.ct h2,.st strong,.rc-n{font-family:'Bricolage Grotesque',sans-serif}
+.hx a:focus-visible,.sv a:focus-visible,.ct a:focus-visible,.mqs a:focus-visible{outline:3px solid var(--violet);outline-offset:3px}
+@keyframes up{to{transform:none}}@keyframes fade{to{opacity:1;transform:none}}
+@keyframes rise{from{opacity:0;transform:translateY(40px) scale(.96)}to{opacity:1;transform:none}}
+@keyframes draw{to{stroke-dashoffset:0}}@keyframes pop{from{opacity:0;scale:.7}to{opacity:1;scale:1}}
+@keyframes bob{to{translate:0 -10px}}@keyframes drift{to{transform:translate(-60px,50px) scale(1.15)}}
+@keyframes mq{to{transform:translateX(calc(-50% - var(--g)/2))}}@keyframes spin{to{transform:rotate(360deg)}}
+html.js .rv{opacity:0;transform:translateY(30px);transition:opacity .8s cubic-bezier(.2,.7,.2,1) calc(var(--d,0)*90ms),transform .8s cubic-bezier(.2,.7,.2,1) calc(var(--d,0)*90ms)}
+html.js .rv.in{opacity:1;transform:none}
+/* hero */
+.hx{background:var(--navy);color:#fff;position:relative;overflow:hidden;padding:168px 0 110px}
+.hx-b{position:absolute;border-radius:50%;filter:blur(70px);animation:drift 14s ease-in-out infinite alternate}
+.hx-b1{width:520px;height:520px;background:#5b46d9;top:-160px;right:-80px;opacity:.55}
+.hx-b2{width:420px;height:420px;background:#1f7ae0;bottom:-200px;left:-100px;opacity:.35;animation-delay:-6s}
+.hx-grid{position:relative;display:grid;grid-template-columns:1.1fr .9fr;gap:60px;align-items:center}
+.hx h1{font-weight:700;font-size:clamp(2.3rem,5vw,4rem);line-height:1.04;letter-spacing:-.025em;color:#fff;margin:0 0 24px;max-width:14ch}
+.split .w{display:inline-block;overflow:hidden;vertical-align:top;padding-bottom:.08em}
+html.js .split .w>span{display:inline-block;transform:translateY(105%);animation:up .9s cubic-bezier(.2,.7,.2,1) forwards;animation-delay:calc(var(--i)*80ms + 150ms)}
+.hx-p{font-size:1.12rem;line-height:1.65;color:#b9bde0;max-width:47ch;margin:0 0 32px}
+html.js .hx-p,html.js .hx-act{opacity:0;transform:translateY(16px);animation:fade .9s ease forwards .9s}
+html.js .hx-act{animation-delay:1.1s}
+.ghost{display:inline-block;margin-left:14px;padding:13px 28px;border:1px solid rgba(255,255,255,.35);border-radius:5px;color:#fff;font-weight:600;transition:background .25s,color .25s}
+.ghost:hover{background:#fff;color:var(--navy)}
+.hx-vis{position:relative;max-width:420px;margin-left:auto;transition:transform .25s ease-out}
+.rc{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.14);border-radius:22px;padding:26px;backdrop-filter:blur(14px);animation:rise 1s .5s cubic-bezier(.2,.7,.2,1) both}
+.rc-top{display:flex;justify-content:space-between;font-size:.85rem;color:#aeb4e6}
+.rc-n{display:block;font-weight:700;font-size:2.4rem;margin:6px 0 2px;color:#fff;letter-spacing:-.02em}
+.rc-up{color:var(--mint);font-weight:600;font-size:.9rem}
+.rc svg{width:100%;height:auto;display:block;margin:16px 0 8px}
+.ln{fill:none;stroke:var(--mint);stroke-width:3;stroke-linecap:round;stroke-dasharray:1;stroke-dashoffset:1;animation:draw 1.8s 1s ease forwards}
+.ar{opacity:0;animation:fade 1s 2.2s forwards}
+.rc-r{list-style:none;margin:0;padding:0}
+.rc-r li{display:flex;justify-content:space-between;padding:11px 0;border-top:1px solid rgba(255,255,255,.1);font-size:.95rem;color:#d5d8f5;opacity:0;transform:translateX(-14px);animation:fade .6s forwards;animation-delay:calc(1.6s + var(--i)*.25s)}
+.rc-r b{color:var(--mint);font-weight:600}
+.chip{position:absolute;background:#fff;color:var(--ink);padding:10px 16px;border-radius:12px;font-weight:600;font-size:.88rem;box-shadow:0 14px 40px rgba(5,8,40,.35);animation:pop .6s 2.2s both,bob 5s 2.8s ease-in-out infinite alternate}
+.chip i{color:#17a673;margin-right:8px}.c1{left:-46px;bottom:64px}.c2{right:-18px;top:-22px;animation-delay:2.5s,3.1s}
+/* clients marquee */
+.mqs{padding:84px 0 92px;background:var(--mist);overflow:hidden}
+.mq-h{display:flex;justify-content:space-between;align-items:end;gap:24px;flex-wrap:wrap;margin-bottom:40px}
+.mq-h h2{font-weight:700;font-size:clamp(1.8rem,3.4vw,2.7rem);line-height:1.12;letter-spacing:-.02em;color:var(--ink);margin:0 0 10px;max-width:18ch}
+.mq-h p{color:var(--mut);margin:0;font-size:1.05rem;line-height:1.6;max-width:48ch}
+.mq-h a{color:var(--ink);font-weight:600;border-bottom:2px solid var(--violet);padding-bottom:2px;transition:color .2s}.mq-h a:hover{color:var(--violet)}
+.mq{--g:22px;overflow:hidden;padding:18px 0;-webkit-mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent);mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent)}
+.mq-track{display:flex;gap:var(--g);width:max-content;animation:mq 80s linear infinite}
+.mq-b .mq-track{animation-duration:98s;animation-direction:reverse}
+.mq:hover .mq-track{animation-play-state:paused}
+.mq-i{position:relative;overflow:hidden;width:230px;height:132px;border:1px solid var(--line);border-radius:18px;display:flex;align-items:center;justify-content:center;padding:22px 26px 30px;background:#fff;transition:transform .35s cubic-bezier(.2,.7,.2,1),box-shadow .35s,border-color .35s,opacity .35s}
+.mq-i::before{content:"";position:absolute;inset:0;background:radial-gradient(220px circle at var(--mx,50%) var(--my,50%),rgba(123,104,238,.22),transparent 70%);opacity:0;transition:opacity .3s}
+.mq-i img{position:relative;max-width:100%;max-height:100%;object-fit:contain;filter:grayscale(1);opacity:.8;transition:filter .35s,opacity .35s,transform .35s}
+.mq-n{position:absolute;left:0;right:0;bottom:0;padding:7px 10px;text-align:center;font-size:.82rem;font-weight:600;color:#fff;background:var(--navy);transform:translateY(100%);transition:transform .3s}
+.mq:hover .mq-i{opacity:.5}
+.mq .mq-i:hover{opacity:1;transform:translateY(-6px) scale(1.06);border-color:var(--violet);box-shadow:0 22px 44px -12px rgba(123,104,238,.5);z-index:2}
+.mq-i:hover::before{opacity:1}.mq-i:hover img{filter:none;opacity:1;transform:scale(1.05)}.mq-i:hover .mq-n{transform:none}
+@media(max-width:575px){.mqs{padding:60px 0 64px}.mq{--g:14px}.mq-i{width:168px;height:100px;padding:16px 18px 24px;border-radius:14px}}
+/* stats */
+.st{background:var(--mist);padding:64px 0}.st ul{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(4,1fr);gap:24px}
+.st li{border-left:3px solid var(--violet);padding-left:18px}
+.st strong{display:block;font-weight:700;font-size:clamp(2.2rem,4vw,3.2rem);line-height:1;color:var(--ink);letter-spacing:-.02em;margin-bottom:8px}.st span{color:var(--mut)}
+/* shared heads */
+.sh{max-width:640px;margin:0 0 44px}.sh h2{font-weight:700;font-size:clamp(1.8rem,3.4vw,2.7rem);line-height:1.12;letter-spacing:-.02em;color:var(--ink);margin:0 0 12px}
+.sh p{color:var(--mut);margin:0;line-height:1.65;font-size:1.05rem}.pr-s .sh h2{color:#fff}.pr-s .sh p{color:#b9bde0}
+/* services bento */
+.sv{padding:100px 0;background:#fff}
+.bn{display:grid;grid-template-columns:repeat(6,1fr);gap:18px}
+.bn a,.bn a:hover{color:var(--ink)}
+.bn a{position:relative;overflow:hidden;display:block;padding:30px;border:1px solid var(--line);border-radius:20px;background:#fff;transition:border-color .25s,transform .25s}
+.bn a::before{content:"";position:absolute;inset:0;background:radial-gradient(320px circle at var(--mx,50%) var(--my,0),rgba(123,104,238,.18),transparent 70%);opacity:0;transition:opacity .3s}
+.bn a:hover{border-color:var(--violet);transform:translateY(-4px)}.bn a:hover::before{opacity:1}.bn a>*{position:relative}
+.bn a:nth-child(-n+2){grid-column:span 3}.bn a:nth-child(n+3){grid-column:span 2}
+.bn .ic{display:grid;place-items:center;width:48px;height:48px;border-radius:14px;background:rgba(123,104,238,.12);color:var(--violet);font-size:1.15rem}
+.bn h3{font-weight:700;font-size:1.3rem;margin:18px 0 8px;color:inherit}.bn p{color:var(--mut);margin:0 0 18px;line-height:1.6}.bn em{font-style:normal;color:var(--violet);font-weight:600}
+.bn a:first-child,.bn a:first-child:hover{background:var(--navy);border-color:var(--navy);color:#fff}.bn a:first-child p{color:#b9bde0}.bn a:first-child em{color:var(--mint)}.bn a:first-child .ic{background:rgba(255,255,255,.1);color:#fff}
+.pc{display:flex;flex-wrap:wrap;gap:10px;margin-top:40px;align-items:center}.pc span{color:var(--mut);margin-right:6px}
+.pc a{border:1px solid var(--line);border-radius:999px;padding:8px 16px;color:var(--ink);font-size:.93rem;transition:background .2s,color .2s,border-color .2s}
+.pc a:hover{background:var(--ink);color:#fff;border-color:var(--ink)}
+/* process */
+.pr-s{background:var(--navy);padding:100px 0;color:#fff}
+.pr{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(4,1fr);gap:28px;counter-reset:s}
+.pr li{position:relative;padding-top:60px}
+.pr li::before{content:counter(s);counter-increment:s;position:absolute;top:0;left:0;z-index:1;width:40px;height:40px;border-radius:50%;background:var(--navy);border:2px solid #3a417a;display:grid;place-items:center;font-weight:700;transition:background .5s,border-color .5s;transition-delay:calc(var(--d)*.35s)}
+.pr li::after{content:"";position:absolute;top:19px;left:40px;right:-28px;height:2px;background:linear-gradient(var(--violet),var(--violet)) left/0 100% no-repeat,#2a3068;transition:background-size .9s calc(var(--d)*.35s + .3s)}
+.pr li.in::before{background:var(--violet);border-color:var(--violet)}.pr li.in::after{background-size:100% 100%}.pr li:last-child::after{display:none}
+.pr h3{font-weight:700;font-size:1.35rem;margin:0 0 8px;color:#fff}.pr p{color:#b9bde0;line-height:1.6;margin:0}
+/* why */
+.wy{padding:100px 0;background:var(--mist)}.wy-g{display:grid;grid-template-columns:.9fr 1.1fr;gap:64px;align-items:start}
+.tg{display:flex;flex-wrap:wrap;gap:8px;margin-top:26px}.tg span{background:#fff;border:1px solid var(--line);border-radius:999px;padding:7px 14px;font-size:.9rem;color:var(--ink)}
+.ck{list-style:none;padding:0;margin:0;display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.ck li{background:#fff;border:1px solid var(--line);border-radius:14px;padding:20px 18px 20px 58px;position:relative;font-weight:600;color:var(--ink);line-height:1.35}
+.ck li::before{content:"";position:absolute;left:18px;top:50%;width:26px;height:26px;margin-top:-13px;border-radius:50%;background:var(--violet) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 14 14'%3E%3Cpath d='M2 7.5l3 3 7-7' fill='none' stroke='white' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center/14px no-repeat;scale:0;transition:scale .5s cubic-bezier(.3,1.6,.5,1) calc(var(--d)*90ms + .35s)}
+.ck li.in::before{scale:1}
+/* cta */
+.ct{background:var(--navy);color:#fff;padding:110px 0;position:relative;overflow:hidden;text-align:center}
+.ct::before{content:"";position:absolute;width:640px;height:640px;left:50%;top:50%;margin:-320px;border-radius:50%;background:conic-gradient(#7b68ee,#1f7ae0,#5ce0b8,#7b68ee);filter:blur(110px);opacity:.33;animation:spin 18s linear infinite}
+.ct .container{position:relative}.ct h2{font-weight:700;font-size:clamp(2rem,4.6vw,3.4rem);line-height:1.08;letter-spacing:-.02em;max-width:18ch;margin:0 auto 18px;color:#fff}
+.ct p{color:#c4c8ea;max-width:52ch;margin:0 auto 32px;line-height:1.65;font-size:1.05rem}
+@media(max-width:991px){.hx{padding:130px 0 72px}.hx-grid,.wy-g{grid-template-columns:1fr;gap:44px}.hx-vis{margin:0 auto}.st ul,.pr{grid-template-columns:repeat(2,1fr)}.pr li::after{display:none}.bn a:nth-child(n){grid-column:span 3}.sv,.pr-s,.wy{padding:72px 0}}
+@media(max-width:575px){.bn a:nth-child(n){grid-column:1/-1}.ck,.pr{grid-template-columns:1fr}.c1{left:-6px}.c2{right:-4px}.st ul{gap:28px 16px}.ghost{margin:12px 0 0}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}.mq-track{animation:none}}
+.bc{display:flex;flex-wrap:wrap;gap:8px;font-size:.92rem;color:#aeb4e6;margin-bottom:22px}.bc a{color:#d5d8f5}.bc a:hover{color:#fff}
+.sx{padding:100px 0;background:#fff;font-family:'Figtree',sans-serif}.sx.m{background:var(--mist)}
+.sx h3,.plan h3{font-family:'Bricolage Grotesque',sans-serif}
+.cg{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.cg.c4{grid-template-columns:repeat(4,1fr)}
+.cd{position:relative;overflow:hidden;padding:28px;border:1px solid var(--line);border-radius:20px;background:#fff;transition:border-color .25s,transform .25s}
+.cd::before{content:"";position:absolute;inset:0;background:radial-gradient(300px circle at var(--mx,50%) var(--my,0),rgba(123,104,238,.16),transparent 70%);opacity:0;transition:opacity .3s}
+.cd:hover{border-color:var(--violet);transform:translateY(-4px)}.cd:hover::before{opacity:1}.cd>*{position:relative}
+.cd .ic{display:grid;place-items:center;width:46px;height:46px;border-radius:14px;background:rgba(123,104,238,.12);color:var(--violet);font-size:1.1rem}
+.cd h3{font-weight:700;font-size:1.22rem;margin:16px 0 8px;color:var(--ink)}.cd p{color:var(--mut);margin:0;line-height:1.6}
+.fl{max-width:820px;display:grid;gap:12px}.fl details{border:1px solid var(--line);border-radius:16px;background:#fff;transition:border-color .25s,background .25s}.fl details[open]{border-color:var(--violet);background:var(--mist)}
+.fl summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:16px;padding:20px 24px;font-weight:600;color:var(--ink)}.fl summary::-webkit-details-marker{display:none}
+.fl summary::after{content:"+";flex:none;display:grid;place-items:center;width:30px;height:30px;border-radius:50%;background:rgba(123,104,238,.12);color:var(--violet);font-size:1.3rem;transition:transform .3s,background .3s,color .3s}
+.fl details[open] summary::after{transform:rotate(45deg);background:var(--violet);color:#fff}.fl summary:focus-visible{outline:3px solid var(--violet);outline-offset:2px}
+.fl details p{margin:0;padding:0 24px 22px;color:var(--mut);line-height:1.7;animation:dn .4s ease}@keyframes dn{from{opacity:0;transform:translateY(-8px)}}
+.hx h1.lg{max-width:17ch;font-size:clamp(2.1rem,4.4vw,3.4rem)}
+.pbar{height:8px;border-radius:99px;background:rgba(255,255,255,.12);overflow:hidden;margin:16px 0 18px}.pbar i{display:block;height:100%;width:0;border-radius:99px;background:linear-gradient(90deg,var(--violet),var(--mint));animation:fill 1.7s .9s cubic-bezier(.4,0,.2,1) forwards}
+@keyframes fill{to{width:100%}}
+.pl{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.pl a,.pl a:hover{color:var(--ink)}.pl a{display:block;padding:26px;border:1px solid var(--line);border-radius:18px;background:#fff;transition:border-color .25s,transform .25s}
+.pl a:hover{border-color:var(--violet);transform:translateY(-4px)}.pl h3{font-family:'Bricolage Grotesque',sans-serif;font-weight:700;font-size:1.2rem;margin:0 0 8px;color:inherit}
+.pl p{color:var(--mut);margin:0 0 14px;line-height:1.55}.pl em{font-style:normal;color:var(--vd,#5b46d9);font-weight:600}
+@media(max-width:991px){.pl,.cg{grid-template-columns:repeat(2,1fr)}.sx{padding:72px 0}.wy-g{grid-template-columns:1fr;gap:40px}.pr-s,.wy{padding:72px 0}}
+@media(max-width:575px){.pl,.cg{grid-template-columns:1fr}.ck{grid-template-columns:1fr}}
+
+/* hero fixes: button alignment, full-width card, chip no longer covers card text */
+.hx-act .default-btn,.ct .default-btn{vertical-align:middle;margin-top:0}
+.hx-act .ghost,.ct .ghost{vertical-align:middle;padding:12px 28px}
+.hx-vis{width:100%}
+.chip.c1{bottom:-22px;left:-34px}
+@media(max-width:575px){.chip.c1{left:-6px;bottom:-20px}.chip.c2{right:-4px}}
+
+/* button rows: keep both buttons level when they share a line */
+.hx-act{display:flex;flex-wrap:wrap;gap:12px 14px;align-items:center}.hx-act .ghost{margin:0}
+.ct .default-btn,.ct .ghost{margin:6px 5px 0}
+@media(max-width:575px){.hx-act .ghost{margin:0}.ct .default-btn,.ct .ghost{margin:6px 5px 0}}
+.ft{padding:100px 0;background:#fff}.ft-g{display:grid;grid-template-columns:290px 1fr;gap:44px;align-items:start}
+.tl{display:grid;gap:10px;position:sticky;top:110px}
+.tl button{display:flex;gap:14px;align-items:center;width:100%;text-align:left;padding:16px 18px;border:1px solid var(--line);border-radius:14px;background:#fff;font:600 1rem 'Figtree',sans-serif;color:var(--ink);cursor:pointer;transition:background .25s,color .25s,border-color .25s}
+.tl button:hover{border-color:var(--violet)}.tl button:focus-visible{outline:3px solid var(--violet);outline-offset:3px}
+.tl .ic,.bf .ic{flex:none;display:grid;place-items:center;width:40px;height:40px;border-radius:12px;background:rgba(123,104,238,.12);color:var(--violet);transition:background .25s,color .25s}
+.tl button[aria-selected="true"]{background:var(--navy);border-color:var(--navy);color:#fff}.tl button[aria-selected="true"] .ic{background:rgba(255,255,255,.12);color:#fff}
+.tp{border:1px solid var(--line);border-radius:22px;padding:40px;background:var(--mist)}.tp[hidden]{display:none}.tp.swap{animation:rise .5s cubic-bezier(.2,.7,.2,1)}
+.tp h3{font-family:'Bricolage Grotesque',sans-serif;font-weight:700;font-size:clamp(1.5rem,2.6vw,2.1rem);line-height:1.15;letter-spacing:-.02em;color:var(--ink);margin:0 0 14px}
+.tp p{color:var(--mut);line-height:1.7;max-width:64ch;margin:0 0 12px}.tp .ck{margin-top:26px}
+html.js .tp .ck li{opacity:0;transform:translateY(12px);transition:opacity .4s calc(var(--d)*60ms),transform .4s calc(var(--d)*60ms)}html.js .tp .ck li.in{opacity:1;transform:none}
+html:not(.js) .ck li::before{scale:1}
+.bf{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.bf li{display:flex;gap:16px;align-items:center;padding:24px;border:1px solid var(--line);border-radius:18px;background:#fff;font-weight:600;color:var(--ink);line-height:1.3;transition:transform .25s,border-color .25s}
+.bf li:hover{border-color:var(--violet);transform:translateY(-4px)}.bf .ic{width:46px;height:46px;font-size:1.05rem}
+.ft.m{background:var(--mist)}.ft.m .tp{background:#fff}.ft.m .tp .ck li{background:var(--mist)}.cnt{color:var(--violet)!important;font-weight:600;margin:0 0 4px!important}
+.bf.b4{grid-template-columns:repeat(4,1fr)}.bf.b4 li{flex-direction:column;align-items:flex-start;gap:14px}
+.in-g{display:grid;grid-template-columns:.95fr 1.05fr;gap:64px;align-items:start}
+.big{font-family:'Bricolage Grotesque',sans-serif;font-weight:700;font-size:clamp(2rem,4.2vw,3.2rem);line-height:1.1;letter-spacing:-.02em;color:var(--ink);margin:0}
+.hl{background:linear-gradient(rgba(123,104,238,.28),rgba(123,104,238,.28)) 0 90%/0 .34em no-repeat;-webkit-box-decoration-break:clone;box-decoration-break:clone;transition:background-size 1s .5s cubic-bezier(.6,0,.2,1)}.in .hl{background-size:100% .34em}
+.in-g p{color:var(--mut);line-height:1.75;font-size:1.08rem;margin:0 0 16px}.in-g .tg{margin-top:22px}
+.ft{padding:100px 0;background:#fff}.cnt,.tp .eg b{color:var(--violet)}
+.tp .eg{margin:24px 0 0;padding:14px 18px;border-left:3px solid var(--violet);background:#fff;border-radius:0 12px 12px 0;color:var(--mut)}.ft.m .tp .eg{background:var(--mist)}
+.nw{font-style:normal;margin-left:8px;padding:2px 9px;border-radius:99px;background:rgba(123,104,238,.3);color:#d6d0fc;font-size:.72rem;font-weight:600}
+.bf.b4{grid-template-columns:repeat(4,1fr)}.bf.b4 li{flex-direction:column;align-items:flex-start;gap:14px}
+@media(max-width:991px){.in-g{grid-template-columns:1fr;gap:28px}.bf.b4{grid-template-columns:repeat(2,1fr)}.ft{padding:72px 0}.ft-g{grid-template-columns:1fr;gap:24px}.tl{position:static;display:flex;overflow-x:auto;padding-bottom:6px}.tl button{flex:none;width:auto}.tp{padding:26px}}
+@media(max-width:575px){.bf.b4{grid-template-columns:1fr}}
+</style>
+</head>
+
+<body>
+
+	<!-- Start Preloader Section -->
+	<div class="preloader">
+		<div class="loader">
+			<div class="shadow"></div>
+			<div class="box"></div>
+		</div>
+	</div>
+	<!-- End Preloader Section -->
+
+	<!-- Start Navbar Section -->
+	<div class="navbar-section">
+		<div class="techvio-responsive-nav">
+			<div class="container">
+				<div class="techvio-responsive-menu">
+					<div class="logo">
+						<a href="index.html">
+							<img src="assets/img/logo.png" class="white-logo" alt="logo">
+							<img src="assets/img/logo-black.png" class="black-logo" alt="logo">
+						</a>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="techvio-nav">
+			<div class="container">
+				<nav class="navbar navbar-expand-md navbar-light">
+					<a class="navbar-brand" href="index.html">
+						<img src="assets/img/logo.png" class="white-logo" alt="logo">
+						<img src="assets/img/logo-black.png" class="black-logo" alt="logo">
+					</a>
+					<div class="collapse navbar-collapse mean-menu" id="navbarSupportedContent">
+						<ul class="navbar-nav">
+							<li class="nav-item">
+								<a href="index.html" class="nav-link">Home</a>
+							</li>
+							<li class="nav-item">
+								<a href="about.html" class="nav-link">About Us</a>
+							</li>
+							<li class="nav-item">
+								<a href="clients.html" class="nav-link">Our Clients</a>
+							</li>
+							<li class="nav-item mega-menu-parent">
+								<a href="#" class="nav-link">
+									Services <i class="fas fa-chevron-down"></i>
+								</a>
+
+								<ul class="mega-menu">
+
+									<div class="mega-menu-column">
+										<h4 class="mega-toggle">Tally Software</h4>
+
+										<div class="mega-menu-item">
+											<a href="tally-prime.html">Tally Prime</a>
+										</div>
+
+										<div class="mega-menu-item">
+											<a href="tally-prime-server.html">Tally Prime Server</a>
+										</div>
+									</div>
+
+									<div class="mega-menu-column">
+										<h4 class="mega-toggle">Tally Services</h4>
+
+										<div class="mega-menu-item">
+											<a href="tally-implementation.html">Tally Implementation</a>
+										</div>
+
+										<div class="mega-menu-item">
+											<a href="tally-cloud.html">Tally On Cloud</a>
+										</div>
+
+										<div class="mega-menu-item">
+											<a href="tally-support-and-amc.html">Tally Support & AMC</a>
+										</div>
+
+										<div class="mega-menu-item">
+											<a href="tally-customization.html">Tally Customization</a>
+										</div>
+									</div>
+
+									<div class="mega-menu-column">
+										<h4 class="mega-toggle">Tally Addons</h4>
+
+										<div class="mega-menu-item">
+											<a href="srilanka-tax-module.html">SriLanka Tax Module</a>
+										</div>
+										<div class="mega-menu-item">
+											<a href="fix-assets-module.html">Fixed Assets Module</a>
+										</div>
+										<div class="mega-menu-item">
+											<a href="fuel-station-module.html">Fuel Station Module</a>
+										</div>
+										<div class="mega-menu-item">
+											<a href="sms-module.html">SMS Module</a>
+										</div>
+										<div class="mega-menu-item">
+											<a href="school-module.html">School Module</a>
+										</div>
+										<div class="mega-menu-item">
+											<a href="tally-mobile-app.html">Tally Mobile App</a>
+										</div>
+										<div class="mega-menu-item">
+											<a href="tally-integration.html">Tally Integrations</a>
+										</div>
+									</div>
+
+									<div class="mega-menu-column">
+										<h4 class="mega-toggle">Other Products</h4>
+
+										<div class="mega-menu-item">
+											<a href="vzone.html">VZone</a>
+										</div>
+
+										<div class="mega-menu-item">
+											<a href="bit-defender.html">Bit Defender</a>
+										</div>
+
+										<div class="mega-menu-item">
+											<a href="dedicated.html">Dedicated Servers</a>
+										</div>
+									</div>
+								</ul>
+							</li>
+							<li class="nav-item">
+								<a href="contact.html" class="nav-link">Contact</a>
+							</li>
+						</ul>
+						<div class="other-option">
+							<a class="default-btn" href="mailto:sales@ngst.lk">Get Support <span></span></a>
+						</div>
+					</div>
+				</nav>
+			</div>
+		</div>
+	</div>
+	<!-- End Navbar Section -->
+	<header class="hx">
+		<div class="hx-b hx-b1"></div><div class="hx-b hx-b2"></div>
+		<div class="container"><div class="hx-grid">
+			<div>
+				<nav class="bc" aria-label="Breadcrumb"><a href="index.html">Home</a><span>/</span><span>Tally Services</span><span>/</span><span>Tally Customization</span></nav>
+				<h1 class="split lg">Tally customization, built around your business</h1>
+				<p class="hx-p">Extend TallyPrime with TDL: custom invoices and reports, extra fields, approvals and industry modules, built by our own developers and fitted into your existing Tally.</p>
+				<div class="hx-act"><a class="default-btn" href="contact.html">Get a quote <span></span></a><a class="ghost" href="tel:+94114616055">Call +94 11 4 616 055</a></div>
+			</div>
+			<div class="hx-vis" aria-hidden="true">
+				<div class="rc">
+					<div class="rc-top"><span>Custom sales invoice</span><span>Sample</span></div>
+					<strong class="rc-n" data-to="3">3</strong>
+					<span class="rc-up">custom fields added to the standard invoice</span>
+					<ul class="rc-r" style="margin-top:18px"><li style="--i:0">Customer <b>Island Hardware</b></li><li style="--i:1"><span>Salesperson <i class="nw">Added</i></span> <b>K. Perera</b></li><li style="--i:2"><span>Delivery route <i class="nw">Added</i></span> <b>Kandy</b></li><li style="--i:3"><span>Approval <i class="nw">Added</i></span> <b>Approved</b></li></ul>
+				</div>
+				<div class="chip c1"><i class="fas fa-check-double"></i>Approval workflow</div>
+				<div class="chip c2"><i class="fas fa-sms"></i>SMS alert sent</div>
+			</div>
+		</div></div>
+	</header>
+
+	<section class="sx m">
+		<div class="container"><div class="in-g">
+			<div class="rv"><h2 class="big">Make TallyPrime work <span class="hl">the way you do.</span></h2></div>
+			<div class="rv" style="--d:1">
+				<p>Tally customization with TDL (Tally Definition Language) lets a business extend and personalise Tally to meet its own operational needs. We can change screens, design reports, adjust print formats, automate steps and build industry-specific features.</p>
+				<p>Whether you need a small report change or a complete business solution inside Tally, we build solutions that match your goals and connect cleanly to your existing Tally setup.</p>
+				<div class="tg"><span>Manufacturing</span><span>Distribution</span><span>Trading</span><span>Retail</span><span>Services</span></div>
+			</div>
+		</div></div>
+	</section>
+
+	<section class="ft">
+		<div class="container">
+			<div class="sh rv"><h2>Tailor it, extend it, connect it</h2><p>Three ways we make Tally fit your business.</p></div>
+			<div class="ft-g"><div class="tl" role="tablist" aria-label="Customization areas"><button type="button" role="tab" id="t0" aria-controls="p0" aria-selected="true" tabindex="0"><span class="ic"><i class="fas fa-sliders-h"></i></span>Tailor Tally</button><button type="button" role="tab" id="t1" aria-controls="p1" aria-selected="false" tabindex="-1"><span class="ic"><i class="fas fa-puzzle-piece"></i></span>Extend Tally</button><button type="button" role="tab" id="t2" aria-controls="p2" aria-selected="false" tabindex="-1"><span class="ic"><i class="fas fa-plug"></i></span>Connect Tally</button></div><div><div class="tp" role="tabpanel" id="p0" aria-labelledby="t0"><h3>Customize TallyPrime to fit your business</h3><p>Shape TallyPrime around your own processes, workflows and reporting needs.</p><ul class="ck"><li style="--d:0">Custom print formats with specific columns, notes and page sizes</li><li style="--d:1">Professionally designed invoices, purchase orders and business documents</li><li style="--d:2">Additional fields to capture industry-specific information</li><li style="--d:3">Advanced user access controls and security rules</li><li style="--d:4">Custom data synchronization and transformation processes</li></ul><p class="eg"><b>For example:</b> an invoice that prints your branch details, delivery route and bank details on one page.</p></div><div class="tp" role="tabpanel" id="p1" aria-labelledby="t1" hidden><h3>Go beyond standard Tally features</h3><p>Add new capabilities and automate business operations without changing your existing Tally setup.</p><ul class="ck"><li style="--d:0">Develop completely new business functions and workflows</li><li style="--d:1">Create custom modules for your industry</li><li style="--d:2">Build extensions directly inside TallyPrime</li><li style="--d:3">Integrate external applications seamlessly</li><li style="--d:4">Enable web access, mobile access, SMS alerts and notifications</li></ul><p class="eg"><b>For example:</b> an approval step that holds a purchase order until a manager approves it.</p></div><div class="tp" role="tabpanel" id="p2" aria-labelledby="t2" hidden><h3>Connect TallyPrime to your business systems</h3><p>Integrate TallyPrime with your other applications to remove duplicate data entry and improve efficiency.</p><ul class="ck"><li style="--d:0">Integrate employee attendance and payroll systems</li><li style="--d:1">Connect third-party ERP, CRM, POS and industry applications</li><li style="--d:2">Automate data exchange between multiple systems</li><li style="--d:3">Reduce manual work and improve data accuracy</li><li style="--d:4">Use TallyPrime's accounting, financial and statutory capabilities</li></ul><p class="eg"><b>For example:</b> daily sales from your POS flowing into Tally with no re-typing.</p></div></div></div>
+		</div>
+	</section>
+
+	<section class="sx m"><div class="container"><div class="sh rv"><h2>What we build</h2><p>From a small format change to a full module, these are the customizations we deliver most.</p></div><ul class="bf b4"><li class="rv" style="--d:0"><span class="ic"><i class="fas fa-file-invoice"></i></span>Custom invoice and voucher formats</li><li class="rv" style="--d:1"><span class="ic"><i class="fas fa-chart-bar"></i></span>Specialised MIS reports</li><li class="rv" style="--d:2"><span class="ic"><i class="fas fa-plus-square"></i></span>Additional data fields</li><li class="rv" style="--d:3"><span class="ic"><i class="fas fa-project-diagram"></i></span>Workflow automation</li><li class="rv" style="--d:0"><span class="ic"><i class="fas fa-check-double"></i></span>Approval systems</li><li class="rv" style="--d:1"><span class="ic"><i class="fas fa-user-lock"></i></span>User-specific controls</li><li class="rv" style="--d:2"><span class="ic"><i class="fas fa-industry"></i></span>Industry-focused modules</li><li class="rv" style="--d:3"><span class="ic"><i class="fas fa-mobile-alt"></i></span>Web, mobile and SMS access</li></ul></div></section>
+
+	<section class="pr-s"><div class="container"><div class="sh rv"><h2>How a customization project works</h2><p>Four steps from your idea to a working solution.</p></div><ol class="pr"><li style="--d:0"><h3>Understand your need</h3><p>We review how your team works today and what you want Tally to do, then agree the scope with you.</p></li><li style="--d:1"><h3>Design the solution</h3><p>We plan the screens, fields, reports or integration, and show you what it will look like.</p></li><li style="--d:2"><h3>Build and test</h3><p>Our TDL developers build it and test it on a copy of your data before anything goes live.</p></li><li style="--d:3"><h3>Install and support</h3><p>We install it, train your team and support it as your business and Tally change.</p></li></ol></div></section>
+
+	<section class="wy">
+		<div class="container wy-g">
+			<div class="rv"><div class="sh" style="margin-bottom:0"><h2>Your partner for Tally customization</h2><p>Our TDL developers and consultants work closely with you, so every customization matches how your business really runs and fits smoothly into your Tally environment.</p></div></div>
+			<ul class="ck"><li class="rv" style="--d:0">Authorized Tally partner</li><li class="rv" style="--d:1">Experienced TDL developers and consultants</li><li class="rv" style="--d:1">Industry-specific customization solutions</li><li class="rv" style="--d:2">Proven success in manufacturing and trading</li><li class="rv" style="--d:2">Extensive retail and distribution experience</li><li class="rv" style="--d:3">Reliable, scalable and cost-effective builds</li></ul>
+		</div>
+	</section>
+
+	<section class="sx"><div class="container"><div class="sh rv"><h2>Common questions</h2></div><div class="fl rv"><details name="faq" open><summary>What is TDL?</summary><p>TDL stands for Tally Definition Language. It is the language used to extend TallyPrime with custom screens, reports, print formats, fields and workflows.</p></details><details name="faq"><summary>How much does a customization cost?</summary><p>It depends on the scope. A report or print-format change is far smaller than a full module. After we review your requirement we give you a clear quote.</p></details><details name="faq"><summary>Will it affect my existing Tally data?</summary><p>We build customizations on top of your existing Tally setup and test them on a copy of your data first, so your live company is not put at risk.</p></details><details name="faq"><summary>Will it keep working when Tally updates?</summary><p>A well-built customization keeps working through normal updates. For a major TallyPrime release we recommend testing first, and we can update the customization if needed.</p></details><details name="faq"><summary>Can you connect Tally to our other software?</summary><p>Yes. We connect TallyPrime with ERP, CRM, POS, payroll, attendance and industry applications, so data moves between systems without re-typing.</p></details></div></div></section>
+
+	<section class="sx m"><div class="container"><div class="sh rv"><h2>More from NextGen</h2><p>Services that go well with a customized Tally.</p></div><div class="pl"><a class="rv" style="--d:0" href="tally-implementation.html"><h3>Tally Implementation</h3><p>Setup, ledgers, stock, VAT and training.</p><em>Learn more</em></a><a class="rv" style="--d:1" href="tally-support-and-amc.html"><h3>Tally Support &amp; AMC</h3><p>Remote support and annual maintenance.</p><em>Learn more</em></a><a class="rv" style="--d:2" href="tally-integration.html"><h3>Tally Integrations</h3><p>Connect Tally to your other systems.</p><em>Learn more</em></a><a class="rv" style="--d:3" href="tally-mobile-app.html"><h3>Tally Mobile App</h3><p>Your Tally data on your phone.</p><em>Learn more</em></a></div></div></section>
+
+	<section class="ct">
+		<div class="container">
+			<h2>Ready to make Tally work your way?</h2>
+			<p>Tell us what you want Tally to do, and we will tell you how we would build it.</p>
+			<a class="default-btn" href="contact.html">Get a quote <span></span></a><a class="ghost" href="tel:+94114616055">Call now</a>
+		</div>
+	</section>
+	<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is TDL?", "acceptedAnswer": {"@type": "Answer", "text": "TDL stands for Tally Definition Language. It is the language used to extend TallyPrime with custom screens, reports, print formats, fields and workflows."}}, {"@type": "Question", "name": "How much does a customization cost?", "acceptedAnswer": {"@type": "Answer", "text": "It depends on the scope. A report or print-format change is far smaller than a full module. After we review your requirement we give you a clear quote."}}, {"@type": "Question", "name": "Will it affect my existing Tally data?", "acceptedAnswer": {"@type": "Answer", "text": "We build customizations on top of your existing Tally setup and test them on a copy of your data first, so your live company is not put at risk."}}, {"@type": "Question", "name": "Will it keep working when Tally updates?", "acceptedAnswer": {"@type": "Answer", "text": "A well-built customization keeps working through normal updates. For a major TallyPrime release we recommend testing first, and we can update the customization if needed."}}, {"@type": "Question", "name": "Can you connect Tally to our other software?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. We connect TallyPrime with ERP, CRM, POS, payroll, attendance and industry applications, so data moves between systems without re-typing."}}]}</script>
+
+<section class="footer-subscribe-wrapper">
+		<!-- Start Footer Section -->
+		<div class="footer-area ptb-100">
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-2 col-md-6 col-sm-6">
+						<div class="single-footer-widget">
+							<a class="footer-logo" href="#">
+								<img src="assets/img/logo.png" class="white-logo" alt="logo">
+							</a>
+							<p>Reach us on</p>
+							<ul class="footer-social">
+								<li>
+									<a href="https://www.facebook.com/Tally.lk"> <i class="fab fa-facebook-f"></i></a>
+								</li>
+							</ul>
+						</div>
+					</div>
+					<div class="col-lg-2 col-md-6 col-sm-6">
+						<div class="single-footer-widget">
+							<div class="footer-heading">
+								<h3>Tally Software</h3>
+							</div>
+							<ul class="footer-quick-links">
+								<!-- Tally Software -->
+								<li><a href="tally-prime.html">Tally Prime</a></li>
+								<li><a href="tally-prime-server.html">Tally Prime Server</a></li>
+							</ul>
+						</div>
+					</div>
+					<div class="col-lg-2 col-md-6 col-sm-6">
+						<div class="single-footer-widget">
+							<div class="footer-heading">
+								<h3>Tally Services</h3>
+							</div>
+							<ul class="footer-quick-links">
+								<!-- Tally Services -->
+								<li><a href="tally-implementation.html">Tally Implementation</a></li>
+								<li><a href="tally-cloud.html">Tally On Cloud</a></li>
+								<li><a href="tally-support-and-amc.html">Tally Support & AMC</a></li>
+								<li><a href="tally-customization.html">Tally Customization</a></li>
+							</ul>
+						</div>
+					</div>
+					<div class="col-lg-2 col-md-6 col-sm-6">
+						<div class="single-footer-widget">
+							<div class="footer-heading">
+								<h3>Tally Addons</h3>
+							</div>
+							<ul class="footer-quick-links">
+								<!-- Tally Addons -->
+								<li><a href="srilanka-tax-module.html">Sri Lanka Tax Module</a></li>
+								<li><a href="fix-assets-module.html">Fixed Assets Module</a></li>
+								<li><a href="fuel-station-module.html">Fuel Station Module</a></li>
+								<li><a href="sms-module.html">SMS Module</a></li>
+								<li><a href="school-module.html">School Module</a></li>
+								<li><a href="tally-mobile-app.html">Tally Mobile App</a></li>
+								<li><a href="tally-integration.html">Tally Integrations</a></li>
+							</ul>
+						</div>
+					</div>
+					<div class="col-lg-2 col-md-6 col-sm-6">
+						<div class="single-footer-widget">
+							<div class="footer-heading">
+								<h3>Other Products</h3>
+							</div>
+							<ul class="footer-quick-links">
+								<!-- Other Products -->
+								<li><a href="vzone.html">VZone</a></li>
+								<li><a href="bit-defender.html">Bit Defender</a></li>
+								<li><a href="dedicated.html">Dedicated Servers</a></li>
+							</ul>
+						</div>
+					</div>
+					<!--<div class="col-lg-2 col-md-6 col-sm-6">
+						<div class="single-footer-widget">
+							<div class="footer-heading">
+								<h3>Useful Links</h3>
+							</div>
+							<ul class="footer-quick-links">
+								<li><a href="about.html">About Us</a></li>
+								<li><a href="contact.html">Contact Us</a></li>
+							</ul>
+						</div>
+					</div>-->
+					<div class="col-lg-2 col-md-6 col-sm-6">
+						<div class="single-footer-widget">
+							<div class="footer-heading">
+								<h3>Contact Info</h3>
+							</div>
+							<div class="footer-info-contact">
+								<i class="flaticon-phone-call"></i>
+								<h3>Phone</h3>
+								<span><a href="tel:0094114616055">+94 11 4 616 055</a></span>
+							</div>
+							<div class="footer-info-contact">
+								<i class="flaticon-envelope"></i>
+								<h3>Email</h3>
+								<span><a href="mailto:sales@ngst.lk">sales@ngst.lk</a></span>
+							</div>
+							<div class="footer-info-contact">
+								<i class="flaticon-placeholder"></i>
+								<h3>Address</h3>
+								<span>121/A Hendala Road, Wattala</span>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- End Footer Section -->
+	</section>
+	<!-- End Footer & Subscribe Section -->
+
+	<!-- Start Copy Right Section -->
+	<div class="copyright-area">
+		<div class="container">
+			<div class="row align-items-center">
+				<div class="col-lg-6 col-md-6">
+					<p><i class="far fa-copyright"></i> 2026 NextGen - All Rights Reserved.</p>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- End Copy Right Section -->
+
+	<!-- Start Go Top Section -->
+	<div class="go-top">
+		<i class="fas fa-chevron-up"></i>
+		<i class="fas fa-chevron-up"></i>
+	</div>
+	<!-- End Go Top Section -->
+
+	<!-- jQuery Min JS -->
+	<script src="assets/js/jquery.min.js"></script>
+	<!-- Popper Min JS -->
+	<script src="assets/js/popper.min.js"></script>
+	<!-- Bootstrap Min JS -->
+	<script src="assets/js/bootstrap.bundle.min.js"></script>
+	<!-- Mean Menu JS  -->
+	<script src="assets/js/jquery.meanmenu.js"></script>
+	<!-- Appear Min JS -->
+	<script src="assets/js/jquery.appear.min.js"></script>
+	<!-- CounterUp Min JS -->
+	<script src="assets/js/jquery.waypoints.min.js"></script>
+	<script src="assets/js/jquery.counterup.min.js"></script>
+	<!-- Owl Carousel Min JS -->
+	<script src="assets/js/owl.carousel.min.js"></script>
+	<!-- Magnific Popup Min JS -->
+	<script src="assets/js/jquery.magnific-popup.min.js"></script>
+	<!-- Isotope Min JS -->
+	<script src="assets/js/isotope.pkgd.min.js"></script>
+	<!-- Swiper Min JS -->
+	<script src="assets/js/swiper.min.js"></script>
+	<!-- WOW Min JS -->
+	<script src="assets/js/wow.min.js"></script>
+	<!-- Main JS -->
+	<script src="assets/js/main.js"></script>
+
+	<script>
+		(function () {
+			var d = document, rm = matchMedia('(prefers-reduced-motion: reduce)').matches;
+			d.querySelectorAll('.split').forEach(function (h) {
+				var i = 0, t = h.textContent.trim(); h.setAttribute('aria-label', t);
+				h.innerHTML = t.split(' ').map(function (w) { return '<span class="w" aria-hidden="true"><span style="--i:' + (i++) + '">' + w + '</span></span>'; }).join(' ');
+			});
+			function count(el) {
+				var to = +el.dataset.to, suf = el.dataset.suf || '', pre = el.dataset.pre || '', t0 = null;
+				function show(v) { el.textContent = pre + Math.round(v).toLocaleString('en-US') + suf; }
+				if (rm) { show(to); return; }
+				(function f(t) { t0 = t0 || t; var p = Math.min((t - t0) / 1600, 1); show(to * (1 - Math.pow(1 - p, 3))); if (p < 1) requestAnimationFrame(f); })(performance.now());
+			}
+			var io = new IntersectionObserver(function (es) {
+				es.forEach(function (e) {
+					if (!e.isIntersecting) return;
+					e.target.classList.add('in');
+					e.target.querySelectorAll('[data-to]').forEach(count);
+					io.unobserve(e.target);
+				});
+			}, { threshold: 0.25 });
+			d.querySelectorAll('.rv, .pr li').forEach(function (el) { io.observe(el); });
+			setTimeout(function () { var n = d.querySelector('.rc-n'); if (n) count(n); }, 900);
+			d.querySelectorAll('.mq-track').forEach(function (t) { t.innerHTML += t.innerHTML; });
+			d.querySelectorAll('.bn a').forEach(function (c) {
+				c.addEventListener('pointermove', function (e) {
+					var r = c.getBoundingClientRect();
+					c.style.setProperty('--mx', e.clientX - r.left + 'px'); c.style.setProperty('--my', e.clientY - r.top + 'px');
+				});
+			});
+			var hx = d.querySelector('.hx'), hv = d.querySelector('.hx-vis');
+			if (hx && hv && !rm) {
+				hx.addEventListener('pointermove', function (e) {
+					hv.style.transform = 'perspective(900px) rotateY(' + ((e.clientX / innerWidth - .5) * 10) + 'deg) rotateX(' + ((e.clientY / innerHeight - .5) * -8) + 'deg)';
+				});
+			}
+		})();
+	</script>
+	<script>
+		(function () {
+			document.addEventListener('pointermove', function (e) {
+				var c = e.target.closest && e.target.closest('.cd'); if (!c) return;
+				var r = c.getBoundingClientRect(); c.style.setProperty('--mx', e.clientX - r.left + 'px'); c.style.setProperty('--my', e.clientY - r.top + 'px');
+			});
+			var ds = document.querySelectorAll('.fl details');
+			ds.forEach(function (d) { d.addEventListener('toggle', function () { if (d.open) ds.forEach(function (o) { if (o !== d) o.open = false; }); }); });
+		})();
+	</script>
+	<script>/* Mobile mega-menu fix: lets the Tally Software / Tally Services / Tally Addons / Other Products headings open and close on phones. */
+(function () {
+	if (window.__megaMobileMenu) return; window.__megaMobileMenu = true;
+	var mq = window.matchMedia('(max-width: 991px)');
+	var st = document.createElement('style');
+	st.textContent = '.mean-container .mega-toggle{cursor:pointer;position:relative;padding-right:44px;-webkit-tap-highlight-color:transparent}' +
+		'.mean-container .mega-toggle::after{content:"+";position:absolute;right:18px;top:50%;transform:translateY(-50%);font-size:20px;font-weight:600;color:#7b68ee}' +
+		'.mean-container .mega-menu-column.open .mega-toggle::after{content:"\\2212"}';
+	document.head.appendChild(st);
+	document.addEventListener('click', function (e) {
+		var t = e.target.closest ? e.target.closest('.mega-toggle') : null;
+		if (!t || !mq.matches) return;
+		var col = t.parentNode, sibs = col.parentNode.children;
+		for (var i = 0; i < sibs.length; i++) { if (sibs[i] !== col) sibs[i].classList.remove('open'); }
+		col.classList.toggle('open');
+	});
+})();
+</script>
+	<script>
+		(function () {
+			var tabs = [].slice.call(document.querySelectorAll('.tl [role=tab]')), panels = [].slice.call(document.querySelectorAll('.tp'));
+			function show(i, focus) {
+				tabs.forEach(function (t, k) { t.setAttribute('aria-selected', k === i); t.tabIndex = k === i ? 0 : -1; });
+				panels.forEach(function (p, k) {
+					var lis = p.querySelectorAll('.ck li'); p.hidden = k !== i;
+					lis.forEach(function (l) { l.classList.remove('in'); });
+					if (k === i) { p.classList.remove('swap'); void p.offsetWidth; p.classList.add('swap'); lis.forEach(function (l) { l.classList.add('in'); }); }
+				});
+				if (focus) tabs[i].focus();
+			}
+			tabs.forEach(function (t, i) {
+				t.addEventListener('click', function () { show(i); });
+				t.addEventListener('keydown', function (e) {
+					var n = { ArrowDown: 1, ArrowRight: 1, ArrowUp: -1, ArrowLeft: -1 }[e.key];
+					if (n) { e.preventDefault(); show((i + n + tabs.length) % tabs.length, true); }
+				});
+			});
+			new IntersectionObserver(function (es, o) { if (es[0].isIntersecting) { show(0); o.disconnect(); } }, { threshold: 0.2 }).observe(document.querySelector('.ft-g'));
+		})();
+	</script>
+</body>
+
+
+</html>
