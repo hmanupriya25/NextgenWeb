@@ -1,0 +1,832 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>Dedicated Servers | NextGen — Cloud & Dell On-Premise Solutions</title>
+  <link rel="icon" type="image/png" href="assets/img/favicon.png">
+  <link href="https://fonts.googleapis.com/css2?family=Dosis:wght@400;500;600;700;800&family=Catamaran:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+  <link rel="stylesheet" href="assets/css/animate.min.css">
+  <link rel="stylesheet" href="assets/css/flaticon.css">
+  <link rel="stylesheet" href="assets/css/fontawesome.min.css">
+  <link rel="stylesheet" href="assets/css/bootstrap-icons.css">
+  <link rel="stylesheet" href="assets/css/meanmenu.css">
+  <link rel="stylesheet" href="assets/css/magnific-popup.min.css">
+  <link rel="stylesheet" href="assets/css/swiper.min.css">
+  <link rel="stylesheet" href="assets/css/owl.carousel.min.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/responsive.css">
+  <link rel="stylesheet" href="assets/css/service-pages.css">
+<style>
+/* ── DEDICATED SERVERS PAGE ── */
+:root {
+  --ds-blue:     #2563eb;
+  --ds-blue-d:   #1d4ed8;
+  --ds-blue-s:   #eff6ff;
+  --ds-teal:     #0d9488;
+  --ds-teal-s:   #f0fdfa;
+  --ds-dell:     #007db8;   /* Dell brand blue */
+  --ds-dell-s:   #e8f5fc;
+  --ds-green:    #16a34a;
+  --ds-green-s:  #f0fdf4;
+  --ds-purple:   #7c3aed;
+  --ds-purple-s: #f5f3ff;
+  --ds-amber:    #d97706;
+  --ds-amber-s:  #fffbeb;
+  --ds-slate:    #334155;
+  --ds-ink:      #1e293b;
+  --ds-muted:    #64748b;
+  --ds-line:     #e2e8f0;
+  --ds-bg:       #f8fafc;
+}
+
+/* ─── HERO ─── */
+.ds-hero {
+  background: linear-gradient(135deg, #060d1f 0%, #0d1f4a 55%, #091a38 100%);
+  padding: 155px 0 0;
+  position: relative; overflow: hidden;
+}
+.ds-hero::before {
+  content:""; position:absolute; inset:0;
+  background:
+    radial-gradient(ellipse 55% 55% at 80% 25%, rgba(37,99,235,.22) 0%, transparent 65%),
+    radial-gradient(ellipse 40% 40% at 10% 80%, rgba(13,148,136,.15) 0%, transparent 60%);
+  pointer-events:none;
+}
+/* animated server rack lines */
+.ds-lines { position:absolute; inset:0; pointer-events:none; overflow:hidden; }
+.ds-line {
+  position:absolute; height:1px; width:100%;
+  background:linear-gradient(90deg,transparent,rgba(37,99,235,.15),transparent);
+  animation:dsLine 6s ease-in-out infinite;
+}
+@keyframes dsLine { 0%,100%{opacity:0;transform:scaleX(0)} 50%{opacity:1;transform:scaleX(1)} }
+
+.ds-hero-grid {
+  display:grid; grid-template-columns:1.1fr .9fr;
+  gap:52px; align-items:center; position:relative; z-index:1;
+}
+.ds-eyebrow {
+  display:inline-flex; align-items:center; gap:8px;
+  background:rgba(37,99,235,.15); border:1px solid rgba(37,99,235,.3);
+  color:#93c5fd; font-size:11px; font-weight:700;
+  text-transform:uppercase; letter-spacing:.1em;
+  padding:5px 14px; border-radius:999px; margin-bottom:18px;
+}
+.ds-hero h1 {
+  font-family:'Catamaran',sans-serif;
+  font-size:clamp(1.9rem,3.8vw,3rem); font-weight:800; color:#fff;
+  line-height:1.1; letter-spacing:-.02em; margin-bottom:16px;
+}
+.ds-hero h1 .cloud-c { color:#60a5fa; }
+.ds-hero h1 .dell-c  { color:#38bdf8; }
+.ds-hero-desc { color:#94a3b8; font-size:1rem; line-height:1.75; margin-bottom:24px; max-width:500px; }
+.ds-pills { display:flex; flex-wrap:wrap; gap:9px; margin-bottom:28px; }
+.ds-pill {
+  display:inline-flex; align-items:center; gap:6px;
+  background:rgba(255,255,255,.07); border:1px solid rgba(255,255,255,.11);
+  color:#cbd5e1; font-size:12px; padding:5px 13px; border-radius:999px;
+}
+.ds-pill i { font-size:12px; }
+.ds-pill.cloud-pill i { color:#60a5fa; }
+.ds-pill.dell-pill  i { color:#38bdf8; }
+.ds-btns { display:flex; gap:12px; flex-wrap:wrap; }
+.ds-btn-primary {
+  background:var(--ds-blue); color:#fff;
+  padding:12px 26px; border-radius:8px; font-size:14px; font-weight:700;
+  border:none; cursor:pointer; text-decoration:none; display:inline-block;
+  transition:background .2s,transform .2s;
+}
+.ds-btn-primary:hover { background:var(--ds-blue-d); transform:translateY(-2px); color:#fff; }
+.ds-btn-ghost {
+  background:transparent; color:#fff; padding:12px 26px; border-radius:8px;
+  font-size:14px; font-weight:600; border:1.5px solid rgba(255,255,255,.25);
+  cursor:pointer; text-decoration:none; display:inline-block;
+  transition:border-color .2s,background .2s;
+}
+.ds-btn-ghost:hover { border-color:rgba(255,255,255,.5); background:rgba(255,255,255,.06); color:#fff; }
+
+/* Hero server rack visual */
+.ds-hero-visual { padding-bottom:0; align-self:flex-end; }
+.ds-rack {
+  background:rgba(255,255,255,.05); backdrop-filter:blur(14px);
+  border:1px solid rgba(255,255,255,.1); border-radius:20px; padding:22px 18px;
+  display:flex; flex-direction:column; gap:8px;
+}
+.ds-rack-title { color:#64748b; font-size:10px; font-weight:700; text-transform:uppercase; letter-spacing:.08em; margin-bottom:4px; }
+.ds-rack-unit {
+  border-radius:8px; padding:10px 14px;
+  display:flex; align-items:center; gap:10px;
+  border:1px solid rgba(255,255,255,.08);
+  animation:dsRack 4s ease-in-out infinite;
+}
+.ds-rack-unit:nth-child(3){animation-delay:.4s}
+.ds-rack-unit:nth-child(4){animation-delay:.8s}
+.ds-rack-unit:nth-child(5){animation-delay:1.2s}
+.ds-rack-unit:nth-child(6){animation-delay:1.6s}
+@keyframes dsRack { 0%,100%{opacity:.8}50%{opacity:1} }
+.ru-cloud { background:rgba(37,99,235,.15); }
+.ru-dell  { background:rgba(0,125,184,.15); }
+.ds-rack-led { width:8px; height:8px; border-radius:50%; flex-shrink:0; }
+.led-green  { background:#22c55e; box-shadow:0 0 6px rgba(34,197,94,.6); }
+.led-blue   { background:#60a5fa; box-shadow:0 0 6px rgba(96,165,250,.6); }
+.ds-rack-label { font-size:11.5px; color:#e2e8f0; font-weight:600; flex:1; }
+.ds-rack-badge { font-size:9.5px; font-weight:700; padding:2px 8px; border-radius:5px; }
+.rb-cloud { background:rgba(37,99,235,.3); color:#93c5fd; }
+.rb-dell  { background:rgba(0,125,184,.3); color:#7dd3fc; }
+.rb-online { background:rgba(34,197,94,.2); color:#4ade80; }
+.ds-rack-stats {
+  display:grid; grid-template-columns:repeat(3,1fr); gap:8px; margin-top:6px;
+}
+.ds-rack-stat {
+  background:rgba(255,255,255,.04); border:1px solid rgba(255,255,255,.07);
+  border-radius:8px; padding:8px; text-align:center;
+}
+.ds-rack-stat strong { display:block; color:#60a5fa; font-family:'Catamaran',sans-serif; font-size:1rem; font-weight:800; line-height:1; }
+.ds-rack-stat span { color:#475569; font-size:9.5px; }
+
+/* ─── STATS STRIP ─── */
+.ds-stats { background:linear-gradient(135deg,#1e3a8a,#1d4ed8); padding:46px 0; }
+.ds-stats-inner { display:grid; grid-template-columns:repeat(4,1fr); }
+.ds-stat { text-align:center; padding:0 20px; border-right:1px solid rgba(255,255,255,.15); }
+.ds-stat:last-child { border-right:none; }
+.ds-stat-n { font-family:'Catamaran',sans-serif; font-size:2.3rem; font-weight:800; color:#fff; line-height:1; margin-bottom:4px; }
+.ds-stat-l { color:#bfdbfe; font-size:13px; }
+
+/* ─── SECTION ─── */
+.ds-section { padding:86px 0; }
+.ds-section-alt { background:var(--ds-bg); }
+.ds-label {
+  display:inline-flex; align-items:center; gap:7px;
+  font-size:11px; font-weight:700; text-transform:uppercase; letter-spacing:.1em;
+  padding:4px 13px; border-radius:999px; margin-bottom:14px;
+}
+.lbl-blue   { background:var(--ds-blue-s);   color:var(--ds-blue);   }
+.lbl-dell   { background:var(--ds-dell-s);    color:var(--ds-dell);   }
+.lbl-teal   { background:var(--ds-teal-s);    color:var(--ds-teal);   }
+.lbl-green  { background:var(--ds-green-s);   color:var(--ds-green);  }
+.lbl-purple { background:var(--ds-purple-s);  color:var(--ds-purple); }
+.lbl-amber  { background:var(--ds-amber-s);   color:var(--ds-amber);  }
+.ds-h {
+  font-family:'Catamaran',sans-serif;
+  font-size:clamp(1.5rem,3vw,2.2rem); font-weight:800; color:var(--ds-ink);
+  letter-spacing:-.02em; margin-bottom:12px; line-height:1.2;
+}
+.ds-p { color:var(--ds-muted); font-size:.98rem; line-height:1.75; max-width:620px; }
+
+/* ─── DUAL SERVER CARDS ─── */
+.ds-dual-grid { display:grid; grid-template-columns:1fr 1fr; gap:20px; margin-top:44px; }
+.ds-server-card {
+  border-radius:20px; overflow:hidden; border:1px solid var(--ds-line);
+  transition:transform .25s,box-shadow .25s;
+}
+.ds-server-card:hover { transform:translateY(-5px); box-shadow:0 20px 50px rgba(0,0,0,.12); }
+.ds-card-header { padding:28px 26px 22px; position:relative; overflow:hidden; }
+.dch-cloud { background:linear-gradient(135deg,#1e3a8a,#2563eb); }
+.dch-dell  { background:linear-gradient(135deg,#003a52,#007db8); }
+.ds-card-header::before {
+  content:""; position:absolute; top:-40px; right:-40px;
+  width:140px; height:140px; border-radius:50%;
+  background:rgba(255,255,255,.06);
+}
+.ds-card-header::after {
+  content:""; position:absolute; bottom:-30px; left:-20px;
+  width:100px; height:100px; border-radius:50%;
+  background:rgba(255,255,255,.04);
+}
+.ds-card-partner {
+  display:inline-flex; align-items:center; gap:6px;
+  background:rgba(255,255,255,.15); border:1px solid rgba(255,255,255,.2);
+  color:#fff; font-size:10px; font-weight:700; text-transform:uppercase;
+  letter-spacing:.08em; padding:3px 10px; border-radius:6px; margin-bottom:14px;
+}
+.ds-card-header h3 {
+  font-family:'Catamaran',sans-serif;
+  font-size:1.5rem; font-weight:800; color:#fff; margin-bottom:8px; position:relative; z-index:1;
+}
+.ds-card-header p { color:rgba(255,255,255,.75); font-size:.9rem; line-height:1.6; position:relative; z-index:1; margin:0; }
+.ds-card-icon { font-size:48px; color:rgba(255,255,255,.12); position:absolute; top:20px; right:24px; z-index:0; }
+.ds-card-body { background:#fff; padding:22px 24px; }
+.ds-card-feat { display:flex; align-items:flex-start; gap:9px; margin-bottom:10px; }
+.ds-card-feat:last-child { margin-bottom:0; }
+.ds-feat-dot { width:20px; height:20px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:9px; flex-shrink:0; margin-top:1px; }
+.dot-cloud { background:var(--ds-blue-s); color:var(--ds-blue); }
+.dot-dell  { background:var(--ds-dell-s);  color:var(--ds-dell);  }
+.ds-card-feat span { font-size:.9rem; color:var(--ds-ink); line-height:1.5; }
+.ds-card-cta { padding:0 24px 24px; background:#fff; }
+.ds-cta-cloud { background:var(--ds-blue); color:#fff; display:block; text-align:center; padding:11px; border-radius:8px; font-size:13.5px; font-weight:700; text-decoration:none; transition:background .2s; }
+.ds-cta-cloud:hover { background:var(--ds-blue-d); color:#fff; }
+.ds-cta-dell { background:var(--ds-dell); color:#fff; display:block; text-align:center; padding:11px; border-radius:8px; font-size:13.5px; font-weight:700; text-decoration:none; transition:background .2s; }
+.ds-cta-dell:hover { background:#005f8e; color:#fff; }
+
+/* ─── DELL PARTNER BADGE ─── */
+.ds-dell-badge {
+  background:linear-gradient(135deg,#003a52,#005f8e);
+  border-radius:16px; padding:28px 32px;
+  display:flex; align-items:center; gap:24px; flex-wrap:wrap;
+  margin-top:44px; border:1px solid rgba(0,125,184,.3);
+}
+.ds-dell-logo {
+  width:70px; height:70px; border-radius:14px;
+  background:#fff; display:flex; align-items:center; justify-content:center;
+  flex-shrink:0; padding:10px;
+}
+.ds-dell-logo-text {
+  font-family:'Catamaran',sans-serif;
+  font-size:26px; font-weight:900; color:#007db8; letter-spacing:-1px;
+}
+.ds-dell-info h4 { font-family:'Catamaran',sans-serif; font-size:1.15rem; font-weight:700; color:#fff; margin-bottom:4px; }
+.ds-dell-info p  { color:#7dd3fc; font-size:.88rem; line-height:1.6; margin:0; }
+.ds-dell-chips { display:flex; flex-wrap:wrap; gap:8px; margin-left:auto; }
+.ds-dell-chip { background:rgba(255,255,255,.1); border:1px solid rgba(255,255,255,.15); color:#e2e8f0; font-size:12px; font-weight:600; padding:5px 13px; border-radius:7px; }
+
+/* ─── BENEFIT CARDS ─── */
+.ds-benefit-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:16px; margin-top:44px; }
+.ds-benefit {
+  background:#fff; border:1px solid var(--ds-line); border-radius:16px; padding:24px 20px;
+  position:relative; overflow:hidden; transition:transform .25s,box-shadow .25s,border-color .25s;
+}
+.ds-benefit::before { content:""; position:absolute; top:0;left:0;right:0;height:3px;opacity:0;transition:opacity .25s; }
+.ds-benefit:hover { transform:translateY(-5px); box-shadow:0 14px 36px rgba(0,0,0,.09); border-color:transparent; }
+.ds-benefit:hover::before { opacity:1; }
+.bc-blue::before   { background:var(--ds-blue); }
+.bc-dell::before   { background:var(--ds-dell); }
+.bc-teal::before   { background:var(--ds-teal); }
+.bc-green::before  { background:var(--ds-green); }
+.bc-purple::before { background:var(--ds-purple); }
+.bc-amber::before  { background:var(--ds-amber); }
+.ds-ben-icon {
+  width:44px; height:44px; border-radius:13px;
+  display:flex; align-items:center; justify-content:center; font-size:19px;
+  margin-bottom:14px; transition:transform .25s;
+}
+.ds-benefit:hover .ds-ben-icon { transform:scale(1.1); }
+.bi-blue   { background:var(--ds-blue-s);   color:var(--ds-blue);   }
+.bi-dell   { background:var(--ds-dell-s);    color:var(--ds-dell);   }
+.bi-teal   { background:var(--ds-teal-s);    color:var(--ds-teal);   }
+.bi-green  { background:var(--ds-green-s);   color:var(--ds-green);  }
+.bi-purple { background:var(--ds-purple-s);  color:var(--ds-purple); }
+.bi-amber  { background:var(--ds-amber-s);   color:var(--ds-amber);  }
+.ds-benefit h3 { font-family:'Catamaran',sans-serif; font-size:.98rem; font-weight:700; color:var(--ds-ink); margin-bottom:7px; }
+.ds-benefit p  { color:var(--ds-muted); font-size:.87rem; line-height:1.6; margin:0; }
+
+/* ─── COMPARISON TABLE ─── */
+.ds-table-wrap { overflow:hidden; border-radius:16px; border:1px solid var(--ds-line); box-shadow:0 8px 30px rgba(0,0,0,.07); margin-top:44px; }
+.ds-table { width:100%; border-collapse:collapse; }
+.ds-table th { padding:14px 18px; font-size:13px; font-weight:700; text-align:left; border-bottom:1px solid var(--ds-line); }
+.ds-table th:first-child { background:#f8fafc; color:var(--ds-muted); font-size:12px; text-transform:uppercase; letter-spacing:.05em; }
+.ds-table th.th-cloud { background:linear-gradient(135deg,var(--ds-blue),#3b82f6); color:#fff; }
+.ds-table th.th-dell  { background:linear-gradient(135deg,var(--ds-dell),#0ea5e9); color:#fff; }
+.ds-table td { padding:12px 18px; font-size:13px; border-bottom:1px solid var(--ds-line); vertical-align:middle; }
+.ds-table tr:last-child td { border-bottom:none; }
+.ds-table tr:nth-child(even) td { background:#fafbfc; }
+.ds-table td:first-child { font-weight:600; color:var(--ds-ink); background:#f8fafc !important; font-size:12.5px; }
+.ds-table td.cloud-val { color:var(--ds-blue); font-weight:600; }
+.ds-table td.cloud-val i { color:var(--ds-blue); margin-right:4px; }
+.ds-table td.dell-val  { color:var(--ds-dell);  font-weight:600; }
+.ds-table td.dell-val  i { color:var(--ds-dell);  margin-right:4px; }
+.ds-sec-row td { background:#1e293b !important; color:#94a3b8 !important; font-size:11px !important; font-weight:700 !important; text-transform:uppercase !important; letter-spacing:.08em !important; padding:8px 18px !important; }
+
+/* ─── PROCESS STEPS ─── */
+.ds-steps { display:grid; grid-template-columns:repeat(4,1fr); gap:0; margin-top:44px; position:relative; }
+.ds-steps::before { content:""; position:absolute; top:28px; left:12%; right:12%; height:2px; background:linear-gradient(90deg,var(--ds-blue),var(--ds-teal),var(--ds-green)); z-index:0; }
+.ds-step { display:flex; flex-direction:column; align-items:center; text-align:center; position:relative; z-index:1; padding:0 10px; }
+.ds-step-dot {
+  width:56px; height:56px; border-radius:50%;
+  display:flex; align-items:center; justify-content:center;
+  font-size:21px; color:#fff; margin-bottom:16px;
+  box-shadow:0 4px 14px rgba(0,0,0,.15); transition:transform .3s;
+}
+.ds-step:hover .ds-step-dot { transform:scale(1.1); }
+.sd-1 { background:linear-gradient(135deg,var(--ds-blue),#3b82f6); }
+.sd-2 { background:linear-gradient(135deg,var(--ds-purple),#8b5cf6); }
+.sd-3 { background:linear-gradient(135deg,var(--ds-teal),#14b8a6); }
+.sd-4 { background:linear-gradient(135deg,var(--ds-green),#22c55e); }
+.ds-step-badge { font-size:10px; font-weight:700; padding:2px 10px; border-radius:999px; margin-bottom:8px; background:var(--ds-blue-s); color:var(--ds-blue); display:inline-block; }
+.ds-step h4 { font-family:'Catamaran',sans-serif; font-size:.95rem; font-weight:700; color:var(--ds-ink); margin-bottom:6px; }
+.ds-step p  { color:var(--ds-muted); font-size:.83rem; line-height:1.55; }
+
+/* ─── CTA ─── */
+.ds-cta {
+  background:linear-gradient(135deg,#060d1f 0%,#0d1f4a 100%);
+  border-radius:24px; padding:60px 44px; text-align:center; position:relative; overflow:hidden;
+}
+.ds-cta::before {
+  content:""; position:absolute; inset:0;
+  background:radial-gradient(ellipse 60% 60% at 50% 0%,rgba(37,99,235,.2) 0%,transparent 65%);
+  pointer-events:none;
+}
+.ds-cta h2 { font-family:'Catamaran',sans-serif; font-size:clamp(1.4rem,3vw,2rem); font-weight:800; color:#fff; margin-bottom:10px; letter-spacing:-.02em; position:relative; }
+.ds-cta p  { color:#94a3b8; font-size:.98rem; margin-bottom:26px; position:relative; }
+.ds-cta-btns { display:flex; gap:12px; justify-content:center; flex-wrap:wrap; position:relative; }
+.ds-cta-contacts { display:flex; justify-content:center; gap:24px; margin-top:18px; flex-wrap:wrap; position:relative; }
+.ds-contact-link { display:flex; align-items:center; gap:7px; color:#93c5fd; font-size:13px; font-weight:600; text-decoration:none; }
+.ds-contact-link:hover { color:#bfdbfe; }
+
+/* ─── REVEAL ─── */
+.ds-reveal { opacity:0; transform:translateY(26px); transition:opacity .6s,transform .6s; }
+.ds-reveal.visible { opacity:1; transform:translateY(0); }
+.ds-reveal-l { opacity:0; transform:translateX(-26px); transition:opacity .6s,transform .6s; }
+.ds-reveal-l.visible { opacity:1; transform:translateX(0); }
+.ds-reveal-r { opacity:0; transform:translateX(26px); transition:opacity .6s,transform .6s; }
+.ds-reveal-r.visible { opacity:1; transform:translateX(0); }
+
+/* ─── RESPONSIVE ─── */
+@media(max-width:991px){
+  .ds-hero { padding:130px 0 0; }
+  .ds-hero-grid { grid-template-columns:1fr; gap:32px; }
+  .ds-hero-visual { max-width:380px; margin:0 auto; }
+  .ds-dual-grid { grid-template-columns:1fr; }
+  .ds-benefit-grid { grid-template-columns:repeat(2,1fr); }
+  .ds-stats-inner { grid-template-columns:repeat(2,1fr); }
+  .ds-stat { border-right:none; border-bottom:1px solid rgba(255,255,255,.12); padding:18px; }
+  .ds-stat:nth-child(3),.ds-stat:last-child { border-bottom:none; }
+  .ds-steps { grid-template-columns:repeat(2,1fr); gap:20px; }
+  .ds-steps::before { display:none; }
+  .ds-dell-badge { flex-direction:column; align-items:flex-start; }
+  .ds-dell-chips { margin-left:0; }
+}
+@media(max-width:575px){
+  .ds-benefit-grid { grid-template-columns:1fr; }
+  .ds-steps { grid-template-columns:1fr; }
+  .ds-cta { padding:40px 20px; }
+  .ds-rack { padding:16px 12px; }
+}
+</style>
+</head>
+
+<body class="service-product-page">
+<div class="preloader"><div class="loader"><div class="shadow"></div><div class="box"></div></div></div>
+
+<!-- ── NAVBAR ── -->
+<div class="navbar-section">
+  <div class="techvio-responsive-nav">
+    <div class="container">
+      <div class="techvio-responsive-menu">
+        <div class="logo">
+          <a href="index.html">
+            <img src="assets/img/logo.png" class="white-logo" alt="logo">
+            <img src="assets/img/logo-black.png" class="black-logo" alt="logo">
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="techvio-nav">
+    <div class="container">
+      <nav class="navbar navbar-expand-md navbar-light">
+        <a class="navbar-brand" href="index.html">
+          <img src="assets/img/logo.png" class="white-logo" alt="logo">
+          <img src="assets/img/logo-black.png" class="black-logo" alt="logo">
+        </a>
+        <div class="collapse navbar-collapse mean-menu" id="navbarSupportedContent">
+          <ul class="navbar-nav">
+            <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+            <li class="nav-item"><a href="about.html" class="nav-link">About Us</a></li>
+            <li class="nav-item"><a href="clients.html" class="nav-link">Our Clients</a></li>
+            <li class="nav-item mega-menu-parent">
+              <a href="#" class="nav-link">Services <i class="fas fa-chevron-down"></i></a>
+              <ul class="mega-menu">
+                <div class="mega-menu-column">
+                  <h4 class="mega-toggle">Tally Software</h4>
+                  <div class="mega-menu-item"><a href="tally-prime.html">Tally Prime</a></div>
+                  <div class="mega-menu-item"><a href="tally-prime-server.html">Tally Prime Server</a></div>
+                </div>
+                <div class="mega-menu-column">
+                  <h4 class="mega-toggle">Tally Services</h4>
+                  <div class="mega-menu-item"><a href="tally-implementation.html">Tally Implementation</a></div>
+                  <div class="mega-menu-item"><a href="tally-cloud.html">Tally On Cloud</a></div>
+                  <div class="mega-menu-item"><a href="tally-support-and-amc.html">Tally Support &amp; AMC</a></div>
+                  <div class="mega-menu-item"><a href="tally-customization.html">Tally Customization</a></div>
+                </div>
+                <div class="mega-menu-column">
+                  <h4 class="mega-toggle">Tally Addons</h4>
+                  <div class="mega-menu-item"><a href="srilanka-tax-module.html">SriLanka Tax Module</a></div>
+                  <div class="mega-menu-item"><a href="fix-assets-module.html">Fixed Assets Module</a></div>
+                  <div class="mega-menu-item"><a href="fuel-station-module.html">Fuel Station Module</a></div>
+                  <div class="mega-menu-item"><a href="sms-module.html">SMS &amp; WhatsApp Module</a></div>
+                  <div class="mega-menu-item"><a href="school-module.html">School Module</a></div>
+                  <div class="mega-menu-item"><a href="tally-mobile-app.html">Tally Mobile App</a></div>
+                  <div class="mega-menu-item"><a href="tally-integration.html">Tally Integrations</a></div>
+                </div>
+                <div class="mega-menu-column">
+                  <h4 class="mega-toggle">Other Products</h4>
+                  <div class="mega-menu-item"><a href="vzone.html">VZone</a></div>
+                  <div class="mega-menu-item"><a href="bit-defender.html">Bit Defender</a></div>
+                  <div class="mega-menu-item"><a href="dedicated.html">Dedicated Servers</a></div>
+                </div>
+              </ul>
+            </li>
+            <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
+          </ul>
+          <div class="other-option">
+            <a class="default-btn" href="mailto:sales@ngst.lk">Get Support <span></span></a>
+          </div>
+        </div>
+      </nav>
+    </div>
+  </div>
+</div>
+
+<!-- ── HERO ── -->
+<section class="ds-hero">
+  <div class="ds-lines" id="dsLines"></div>
+  <div class="container">
+    <div class="ds-hero-grid">
+      <div style="padding-bottom:72px;">
+        <div class="ds-eyebrow"><i class="fas fa-server"></i> Cloud &amp; On-Premise Server Solutions</div>
+        <h1>
+          <span class="cloud-c">Cloud</span> &amp;
+          <span class="dell-c">Dedicated</span><br>
+          Servers for Your Business
+        </h1>
+        <p class="ds-hero-desc">Whether you need a fully managed cloud server or a powerful on-premise Dell hardware solution — NextGen SoftTech provides the right infrastructure for your business needs, backed by expert support.</p>
+        <div class="ds-pills">
+          <span class="ds-pill cloud-pill"><i class="fas fa-cloud"></i> Managed Cloud Servers</span>
+          <span class="ds-pill dell-pill"><i class="fas fa-server"></i> Authorized Dell Partner</span>
+          <span class="ds-pill cloud-pill"><i class="fas fa-shield-alt"></i> 99.9% Uptime</span>
+          <span class="ds-pill dell-pill"><i class="fas fa-tools"></i> Expert Setup &amp; Support</span>
+        </div>
+        <div class="ds-btns">
+          <a href="contact.html" class="ds-btn-primary">Get a Quote</a>
+          <a href="tel:0094114616055" class="ds-btn-ghost"><i class="fas fa-phone-alt" style="margin-right:6px"></i>Call Us</a>
+        </div>
+      </div>
+
+      <!-- Server rack visual -->
+      <div class="ds-hero-visual">
+        <div class="ds-rack">
+          <div class="ds-rack-title"><i class="fas fa-server" style="margin-right:5px;"></i>Server Infrastructure</div>
+          <div class="ds-rack-unit ru-cloud">
+            <div class="ds-rack-led led-green"></div>
+            <div class="ds-rack-label">Cloud Server — Production</div>
+            <div class="ds-rack-badge rb-online">LIVE</div>
+          </div>
+          <div class="ds-rack-unit ru-cloud">
+            <div class="ds-rack-led led-green"></div>
+            <div class="ds-rack-label">Cloud Server — Backup</div>
+            <div class="ds-rack-badge rb-cloud">CLOUD</div>
+          </div>
+          <div class="ds-rack-unit ru-dell">
+            <div class="ds-rack-led led-blue"></div>
+            <div class="ds-rack-label">Dell PowerEdge R750</div>
+            <div class="ds-rack-badge rb-dell">DELL</div>
+          </div>
+          <div class="ds-rack-unit ru-dell">
+            <div class="ds-rack-led led-blue"></div>
+            <div class="ds-rack-label">Dell PowerEdge T550</div>
+            <div class="ds-rack-badge rb-dell">DELL</div>
+          </div>
+          <div class="ds-rack-stats">
+            <div class="ds-rack-stat"><strong>99.9%</strong><span>Uptime</span></div>
+            <div class="ds-rack-stat"><strong>24/7</strong><span>Monitoring</span></div>
+            <div class="ds-rack-stat"><strong>SSD</strong><span>Storage</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── STATS ── -->
+<div class="ds-stats">
+  <div class="container">
+    <div class="ds-stats-inner">
+      <div class="ds-stat"><div class="ds-stat-n">99.9%</div><div class="ds-stat-l">Server Uptime Guarantee</div></div>
+      <div class="ds-stat"><div class="ds-stat-n">24/7</div><div class="ds-stat-l">Monitoring &amp; Support</div></div>
+      <div class="ds-stat"><div class="ds-stat-n">2</div><div class="ds-stat-l">Server Types — Cloud &amp; On-Premise</div></div>
+      <div class="ds-stat"><div class="ds-stat-n">Dell</div><div class="ds-stat-l">Authorized Partner Sri Lanka</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- ── TWO SERVER OPTIONS ── -->
+<section class="ds-section">
+  <div class="container">
+    <div class="text-center ds-reveal">
+      <div class="ds-label lbl-blue"><i class="fas fa-th-large"></i> Our Solutions</div>
+      <h2 class="ds-h">Two powerful server options — one trusted partner</h2>
+      <p class="ds-p mx-auto">We offer both managed cloud servers and authorized Dell on-premise hardware — so you can choose the infrastructure model that best fits your business requirements, budget, and security policies.</p>
+    </div>
+
+    <div class="ds-dual-grid">
+
+      <!-- CLOUD SERVER CARD -->
+      <div class="ds-server-card ds-reveal" style="transition-delay:.05s">
+        <div class="ds-card-header dch-cloud">
+          <i class="fas fa-cloud ds-card-icon"></i>
+          <div class="ds-card-partner"><i class="fas fa-check-circle"></i> Managed Service</div>
+          <h3>Cloud Dedicated Servers</h3>
+          <p>Enterprise-grade cloud infrastructure — fully managed, always online, instantly scalable. No hardware to buy, no maintenance to worry about.</p>
+        </div>
+        <div class="ds-card-body">
+          <div class="ds-card-feat"><div class="ds-feat-dot dot-cloud"><i class="fas fa-check"></i></div><span>High-performance virtual dedicated resources on enterprise cloud infrastructure</span></div>
+          <div class="ds-card-feat"><div class="ds-feat-dot dot-cloud"><i class="fas fa-check"></i></div><span>Fully managed — we handle setup, updates, monitoring, and maintenance</span></div>
+          <div class="ds-card-feat"><div class="ds-feat-dot dot-cloud"><i class="fas fa-check"></i></div><span>Access your server from anywhere via remote desktop or VPN</span></div>
+          <div class="ds-card-feat"><div class="ds-feat-dot dot-cloud"><i class="fas fa-check"></i></div><span>Automated daily backups with fast disaster recovery</span></div>
+          <div class="ds-card-feat"><div class="ds-feat-dot dot-cloud"><i class="fas fa-check"></i></div><span>Firewall, SSL, and enterprise-grade security built in</span></div>
+          <div class="ds-card-feat"><div class="ds-feat-dot dot-cloud"><i class="fas fa-check"></i></div><span>Scale CPU, RAM, and storage instantly — no hardware changes</span></div>
+          <div class="ds-card-feat"><div class="ds-feat-dot dot-cloud"><i class="fas fa-check"></i></div><span>Ideal for Tally, ERP, business apps, and remote access workloads</span></div>
+          <div class="ds-card-feat"><div class="ds-feat-dot dot-cloud"><i class="fas fa-check"></i></div><span>Flexible monthly or annual pricing — no capital investment</span></div>
+        </div>
+        <div class="ds-card-cta">
+          <a href="contact.html" class="ds-cta-cloud">Get Cloud Server Quote <i class="fas fa-arrow-right" style="margin-left:6px;"></i></a>
+        </div>
+      </div>
+
+      <!-- DELL ON-PREMISE CARD -->
+      <div class="ds-server-card ds-reveal" style="transition-delay:.1s">
+        <div class="ds-card-header dch-dell">
+          <i class="fas fa-server ds-card-icon"></i>
+          <div class="ds-card-partner"><i class="fas fa-certificate"></i> Authorized Dell Partner</div>
+          <h3>Dell On-Premise Servers</h3>
+          <p>Physical Dell server hardware deployed at your premises — full ownership, maximum control, and Dell-certified quality, supplied and installed by us.</p>
+        </div>
+        <div class="ds-card-body">
+          <div class="ds-card-feat"><div class="ds-feat-dot dot-dell"><i class="fas fa-check"></i></div><span>Genuine Dell PowerEdge rack and tower servers — latest generation</span></div>
+          <div class="ds-card-feat"><div class="ds-feat-dot dot-dell"><i class="fas fa-check"></i></div><span>Authorized Dell partner — certified sales, supply, and warranty support in Sri Lanka</span></div>
+          <div class="ds-card-feat"><div class="ds-feat-dot dot-dell"><i class="fas fa-check"></i></div><span>Complete hardware supply — server, UPS, networking, and accessories</span></div>
+          <div class="ds-card-feat"><div class="ds-feat-dot dot-dell"><i class="fas fa-check"></i></div><span>Professional rack installation and server room setup</span></div>
+          <div class="ds-card-feat"><div class="ds-feat-dot dot-dell"><i class="fas fa-check"></i></div><span>Windows Server, VMware, and Hyper-V licensing and configuration</span></div>
+          <div class="ds-card-feat"><div class="ds-feat-dot dot-dell"><i class="fas fa-check"></i></div><span>RAID, SSD/NVMe storage configuration for maximum performance</span></div>
+          <div class="ds-card-feat"><div class="ds-feat-dot dot-dell"><i class="fas fa-check"></i></div><span>Dell ProSupport warranty coverage and hardware repair support</span></div>
+          <div class="ds-card-feat"><div class="ds-feat-dot dot-dell"><i class="fas fa-check"></i></div><span>Ongoing AMC and technical support after installation</span></div>
+        </div>
+        <div class="ds-card-cta">
+          <a href="contact.html" class="ds-cta-dell">Get Dell Server Quote <i class="fas fa-arrow-right" style="margin-left:6px;"></i></a>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Dell Partner Badge -->
+    <div class="ds-dell-badge ds-reveal">
+      <div class="ds-dell-logo">
+        <div class="ds-dell-logo-text">DELL</div>
+      </div>
+      <div class="ds-dell-info">
+        <h4>Authorized Dell Technologies Partner — Sri Lanka</h4>
+        <p>NextGen SoftTech is an authorized Dell Technologies partner, enabling us to supply genuine Dell server hardware with official warranty, ProSupport, and certified technical service across Sri Lanka.</p>
+      </div>
+      <div class="ds-dell-chips">
+        <div class="ds-dell-chip"><i class="fas fa-certificate" style="margin-right:5px;color:#7dd3fc;"></i>Authorized Partner</div>
+        <div class="ds-dell-chip"><i class="fas fa-shield-alt" style="margin-right:5px;color:#7dd3fc;"></i>Genuine Hardware</div>
+        <div class="ds-dell-chip"><i class="fas fa-headset" style="margin-right:5px;color:#7dd3fc;"></i>ProSupport Warranty</div>
+        <div class="ds-dell-chip"><i class="fas fa-tools" style="margin-right:5px;color:#7dd3fc;"></i>Certified Installation</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── KEY BENEFITS ── -->
+<section class="ds-section ds-section-alt">
+  <div class="container">
+    <div class="text-center ds-reveal">
+      <div class="ds-label lbl-teal"><i class="fas fa-star"></i> Why Choose NextGen</div>
+      <h2 class="ds-h">Enterprise server capabilities for every business</h2>
+      <p class="ds-p mx-auto">Whether you choose cloud or on-premise, every NextGen server solution comes backed by the same commitment to performance, reliability, and expert support.</p>
+    </div>
+    <div class="ds-benefit-grid">
+      <div class="ds-benefit bc-blue ds-reveal" style="transition-delay:.05s">
+        <div class="ds-ben-icon bi-blue"><i class="fas fa-tachometer-alt"></i></div>
+        <h3>High-Performance Processing</h3>
+        <p>Whether cloud virtual or Dell physical — our servers are configured with enterprise-grade CPUs, fast RAM, and NVMe/SSD storage for maximum performance.</p>
+      </div>
+      <div class="ds-benefit bc-dell ds-reveal" style="transition-delay:.1s">
+        <div class="ds-ben-icon bi-dell"><i class="fas fa-shield-alt"></i></div>
+        <h3>Advanced Security</h3>
+        <p>Firewall protection, access controls, encrypted connections, and data isolation ensure your critical business data stays safe — on cloud or on-premise.</p>
+      </div>
+      <div class="ds-benefit bc-teal ds-reveal" style="transition-delay:.15s">
+        <div class="ds-ben-icon bi-teal"><i class="fas fa-clock"></i></div>
+        <h3>99.9% Uptime Reliability</h3>
+        <p>Redundant infrastructure, proactive monitoring, and fast incident response ensure your server is always available when your business needs it.</p>
+      </div>
+      <div class="ds-benefit bc-green ds-reveal" style="transition-delay:.2s">
+        <div class="ds-ben-icon bi-green"><i class="fas fa-expand-arrows-alt"></i></div>
+        <h3>Scalable Infrastructure</h3>
+        <p>Cloud servers scale in minutes. Dell hardware supports future upgrades. Either way, your infrastructure grows alongside your business without disruption.</p>
+      </div>
+      <div class="ds-benefit bc-purple ds-reveal" style="transition-delay:.25s">
+        <div class="ds-ben-icon bi-purple"><i class="fas fa-database"></i></div>
+        <h3>Backup &amp; Disaster Recovery</h3>
+        <p>Automated backups, offsite replication, and fast recovery options ensure your data is always protected — and restorable within minutes if needed.</p>
+      </div>
+      <div class="ds-benefit bc-amber ds-reveal" style="transition-delay:.3s">
+        <div class="ds-ben-icon bi-amber"><i class="fas fa-headset"></i></div>
+        <h3>Expert Technical Support</h3>
+        <p>Our certified engineers handle setup, configuration, ongoing maintenance, and troubleshooting — so your team never has to deal with server issues alone.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── COMPARISON TABLE ── -->
+<section class="ds-section">
+  <div class="container">
+    <div class="text-center ds-reveal">
+      <div class="ds-label lbl-blue"><i class="fas fa-table"></i> Compare Options</div>
+      <h2 class="ds-h">Cloud vs On-Premise — which is right for you?</h2>
+      <p class="ds-p mx-auto">Both options deliver enterprise performance — the right choice depends on your control preferences, budget model, and infrastructure requirements.</p>
+    </div>
+    <div class="ds-table-wrap ds-reveal">
+      <table class="ds-table">
+        <thead>
+          <tr>
+            <th style="width:34%">Feature</th>
+            <th class="th-cloud" style="width:33%"><i class="fas fa-cloud" style="margin-right:7px;"></i>Cloud Server</th>
+            <th class="th-dell" style="width:33%"><i class="fas fa-server" style="margin-right:7px;"></i>Dell On-Premise</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="ds-sec-row"><td colspan="3">Ownership &amp; Cost</td></tr>
+          <tr><td>Hardware ownership</td><td class="cloud-val"><i class="fas fa-times-circle" style="color:#ef4444;"></i> Managed by us</td><td class="dell-val"><i class="fas fa-check-circle"></i> You own the hardware</td></tr>
+          <tr><td>Initial investment</td><td class="cloud-val"><i class="fas fa-check-circle"></i> Low — subscription only</td><td class="dell-val"><i class="fas fa-info-circle"></i> One-time hardware cost</td></tr>
+          <tr><td>Pricing model</td><td class="cloud-val"><i class="fas fa-check-circle"></i> Monthly / annual</td><td class="dell-val"><i class="fas fa-check-circle"></i> Purchase + AMC</td></tr>
+          <tr class="ds-sec-row"><td colspan="3">Performance &amp; Control</td></tr>
+          <tr><td>Physical control</td><td class="cloud-val" style="color:var(--ds-muted);">Remote only</td><td class="dell-val"><i class="fas fa-check-circle"></i> Full physical control</td></tr>
+          <tr><td>Data location</td><td class="cloud-val" style="color:var(--ds-muted);">Remote data centre</td><td class="dell-val"><i class="fas fa-check-circle"></i> On your premises</td></tr>
+          <tr><td>Customisation</td><td class="cloud-val"><i class="fas fa-check-circle"></i> Flexible virtual config</td><td class="dell-val"><i class="fas fa-check-circle"></i> Full hardware config</td></tr>
+          <tr><td>Performance</td><td class="cloud-val"><i class="fas fa-check-circle"></i> Enterprise-grade virtual</td><td class="dell-val"><i class="fas fa-check-circle"></i> Dedicated bare metal</td></tr>
+          <tr class="ds-sec-row"><td colspan="3">Management &amp; Support</td></tr>
+          <tr><td>IT maintenance</td><td class="cloud-val"><i class="fas fa-check-circle"></i> Fully managed by us</td><td class="dell-val" style="color:var(--ds-muted);">In-house or AMC</td></tr>
+          <tr><td>Setup time</td><td class="cloud-val"><i class="fas fa-check-circle"></i> 24–48 hours</td><td class="dell-val" style="color:var(--ds-muted);">3–7 days (hardware)</td></tr>
+          <tr><td>Scalability</td><td class="cloud-val"><i class="fas fa-check-circle"></i> Instant — add resources</td><td class="dell-val" style="color:var(--ds-muted);">Hardware upgrade needed</td></tr>
+          <tr><td>Warranty &amp; support</td><td class="cloud-val"><i class="fas fa-check-circle"></i> Included in plan</td><td class="dell-val"><i class="fas fa-check-circle"></i> Dell ProSupport</td></tr>
+          <tr class="ds-sec-row"><td colspan="3">Best Suited For</td></tr>
+          <tr><td>Ideal for</td><td class="cloud-val">Remote teams, Tally cloud, flexible businesses</td><td class="dell-val">Data-sensitive, regulated, high-transaction businesses</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- ── HOW WE DELIVER ── -->
+<section class="ds-section ds-section-alt">
+  <div class="container">
+    <div class="text-center ds-reveal">
+      <div class="ds-label lbl-green"><i class="fas fa-route"></i> How We Deliver</div>
+      <h2 class="ds-h">From consultation to fully operational — in days</h2>
+      <p class="ds-p mx-auto">Our structured delivery process ensures your server is set up correctly, configured for your workloads, and ready to use with minimal disruption to your business.</p>
+    </div>
+    <div class="ds-steps ds-reveal">
+      <div class="ds-step">
+        <div class="ds-step-dot sd-1"><i class="fas fa-comments"></i></div>
+        <div class="ds-step-badge">Step 1</div>
+        <h4>Consultation</h4>
+        <p>We assess your workload, user count, security requirements, and budget to recommend the right solution</p>
+      </div>
+      <div class="ds-step">
+        <div class="ds-step-dot sd-2"><i class="fas fa-drafting-compass"></i></div>
+        <div class="ds-step-badge" style="background:var(--ds-purple-s);color:var(--ds-purple);">Step 2</div>
+        <h4>Solution Design</h4>
+        <p>We design the server configuration, storage layout, network setup, and OS/software stack for your needs</p>
+      </div>
+      <div class="ds-step">
+        <div class="ds-step-dot sd-3"><i class="fas fa-cogs"></i></div>
+        <div class="ds-step-badge" style="background:var(--ds-teal-s);color:var(--ds-teal);">Step 3</div>
+        <h4>Setup &amp; Deploy</h4>
+        <p>Cloud: provisioned within 24–48 hours. Dell: hardware delivered, racked, and configured at your site</p>
+      </div>
+      <div class="ds-step">
+        <div class="ds-step-dot sd-4"><i class="fas fa-chart-line"></i></div>
+        <div class="ds-step-badge" style="background:var(--ds-green-s);color:var(--ds-green);">Step 4</div>
+        <h4>Ongoing Support</h4>
+        <p>Monitoring, maintenance, updates, and technical support keep your server performing at its best</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── CTA ── -->
+<section class="ds-section" style="padding-bottom:100px;">
+  <div class="container">
+    <div class="ds-cta ds-reveal">
+      <h2>Ready to power your business with the right server?</h2>
+      <p>Whether you need a managed cloud server or a Dell on-premise solution — we'll help you choose, deploy, and support the right infrastructure for your business. Contact us for a free consultation and quote.</p>
+      <div class="ds-cta-btns">
+        <a href="contact.html" class="ds-btn-primary">Get a Free Quote</a>
+        <a href="contact.html" class="ds-btn-ghost">Contact Us</a>
+      </div>
+      <div class="ds-cta-contacts">
+        <a href="tel:0094114616055" class="ds-contact-link"><i class="fas fa-phone-alt"></i>+94 11 4 616 055</a>
+        <a href="mailto:sales@ngst.lk" class="ds-contact-link"><i class="fas fa-envelope"></i>sales@ngst.lk</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── FOOTER ── -->
+<section class="footer-subscribe-wrapper">
+  <div class="footer-area ptb-100">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-2 col-md-6 col-sm-6">
+          <div class="single-footer-widget">
+            <a class="footer-logo" href="#"><img src="assets/img/logo.png" class="white-logo" alt="logo"></a>
+            <p>Reach us on</p>
+            <ul class="footer-social"><li><a href="https://www.facebook.com/Tally.lk"><i class="fab fa-facebook-f"></i></a></li></ul>
+          </div>
+        </div>
+        <div class="col-lg-2 col-md-6 col-sm-6">
+          <div class="single-footer-widget">
+            <div class="footer-heading"><h3>Tally Software</h3></div>
+            <ul class="footer-quick-links">
+              <li><a href="tally-prime.html">Tally Prime</a></li>
+              <li><a href="tally-prime-server.html">Tally Prime Server</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-lg-2 col-md-6 col-sm-6">
+          <div class="single-footer-widget">
+            <div class="footer-heading"><h3>Tally Services</h3></div>
+            <ul class="footer-quick-links">
+              <li><a href="tally-implementation.html">Tally Implementation</a></li>
+              <li><a href="tally-cloud.html">Tally On Cloud</a></li>
+              <li><a href="tally-support-and-amc.html">Tally Support &amp; AMC</a></li>
+              <li><a href="tally-customization.html">Tally Customization</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-lg-2 col-md-6 col-sm-6">
+          <div class="single-footer-widget">
+            <div class="footer-heading"><h3>Tally Addons</h3></div>
+            <ul class="footer-quick-links">
+              <li><a href="srilanka-tax-module.html">Sri Lanka Tax Module</a></li>
+              <li><a href="fix-assets-module.html">Fixed Assets Module</a></li>
+              <li><a href="fuel-station-module.html">Fuel Station Module</a></li>
+              <li><a href="sms-module.html">SMS &amp; WhatsApp Module</a></li>
+              <li><a href="school-module.html">School Module</a></li>
+              <li><a href="tally-mobile-app.html">Tally Mobile App</a></li>
+              <li><a href="tally-integration.html">Tally Integrations</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-lg-2 col-md-6 col-sm-6">
+          <div class="single-footer-widget">
+            <div class="footer-heading"><h3>Other Products</h3></div>
+            <ul class="footer-quick-links">
+              <li><a href="vzone.html">VZone</a></li>
+              <li><a href="bit-defender.html">Bit Defender</a></li>
+              <li><a href="dedicated.html">Dedicated Servers</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-lg-2 col-md-6 col-sm-6">
+          <div class="single-footer-widget">
+            <div class="footer-heading"><h3>Contact Info</h3></div>
+            <div class="footer-info-contact"><i class="flaticon-phone-call"></i><h3>Phone</h3><span><a href="tel:0094114616055">+94 11 4 616 055</a></span></div>
+            <div class="footer-info-contact"><i class="flaticon-envelope"></i><h3>Email</h3><span><a href="mailto:sales@ngst.lk">sales@ngst.lk</a></span></div>
+            <div class="footer-info-contact"><i class="flaticon-placeholder"></i><h3>Address</h3><span>121/A Hendala Road, Wattala</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<div class="copyright-area">
+  <div class="container">
+    <div class="row align-items-center">
+      <div class="col-lg-6 col-md-6">
+        <p><i class="far fa-copyright"></i> 2026 NextGen - All Rights Reserved.</p>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="go-top"><i class="fas fa-chevron-up"></i><i class="fas fa-chevron-up"></i></div>
+
+<script src="assets/js/jquery.min.js"></script>
+<script src="assets/js/popper.min.js"></script>
+<script src="assets/js/bootstrap.bundle.min.js"></script>
+<script src="assets/js/jquery.meanmenu.js"></script>
+<script src="assets/js/jquery.appear.min.js"></script>
+<script src="assets/js/jquery.waypoints.min.js"></script>
+<script src="assets/js/jquery.counterup.min.js"></script>
+<script src="assets/js/owl.carousel.min.js"></script>
+<script src="assets/js/jquery.magnific-popup.min.js"></script>
+<script src="assets/js/isotope.pkgd.min.js"></script>
+<script src="assets/js/swiper.min.js"></script>
+<script src="assets/js/wow.min.js"></script>
+<script src="assets/js/main.js"></script>
+<script>
+/* Scroll reveal */
+const io = new IntersectionObserver(entries => {
+  entries.forEach(e => { if(e.isIntersecting){ e.target.classList.add('visible'); io.unobserve(e.target); } });
+}, { threshold:0.09 });
+document.querySelectorAll('.ds-reveal,.ds-reveal-l,.ds-reveal-r').forEach(el => io.observe(el));
+
+/* Animated lines in hero */
+(function(){
+  const wrap = document.getElementById('dsLines');
+  if(!wrap) return;
+  [15,28,42,56,70,82].forEach((top,i) => {
+    const l = document.createElement('div');
+    l.className = 'ds-line';
+    l.style.cssText = `top:${top}%;animation-delay:${i*0.8}s;animation-duration:${5+i*0.5}s;`;
+    wrap.appendChild(l);
+  });
+})();
+</script>
+</body>
+</html>
